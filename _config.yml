@@ -13,14 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+#base
 title: 肖申克赫本
-subtitle: 个人站
+subtitle: 编织未来，“程”就梦想
 description: 欢迎来到我的个人站~
 
 # 头像里面的标题
 avatarTitle: 肖申克赫本
 # 头像里面的描述
-avatarDesc: Java 学习
+avatarDesc: Java 学习/后台开发
 # Comment
 comment:
     # disqus: leopard
@@ -28,20 +29,20 @@ comment:
 
 # Social
 social:
-    weibo:  
+    weibo: 5548352763
     github: nilzxq
     # twitter: 
     mail: zxq20141213@163.com
 
-url: "http://nilzzzz.github.com"
+url: "http://nilzzzz.github.io"
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 baidu:
-    id: 
+    id: 8ba1c6be0953b6f9c2ba38e57f615421  
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
 ga:
-    id:  
+    id: UA-84134159-3 
     host: auto  
 
 
@@ -49,8 +50,6 @@ ga:
 #
 #
 #  _post/ 下的文章更换成你自己的文章
-#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
-#
 #
 # 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
 
@@ -79,10 +78,7 @@ nav:
 gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
-
-
-description: > # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog
+description: 欢迎来到我的个人站~
 url: "https://nilzzz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll

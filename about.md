@@ -3,46 +3,35 @@ layout: page
 title: 关于我 
 ---
 
-一个 热爱JAVA的开发者，喜欢研究一些新技术。
+一个 热爱JAVA的攻城狮。
 <p>
-平时喜欢整理个人博客，逛逛技术论坛。
+平时喜欢整理个人博客，逛逛技术论坛，
 <p>
-了解一些 前端 基本概念和 Python 的简单用法。
+喜欢推理类文学，喜欢东野圭吾、乔布斯、赫本等等，最爱coding。
 
 <p>
-
-所在公司
-<a target="_blank" href="https://www.talkingdata.com/"> TalkingData </a>
-是一个移动互联网大数据平台的公司，无论你是运营、产品、开发 或者是App终端用户都可以了解下我们公司。
+目前在某大学本科在读。
 <p>
 
-推荐一个我维护的 Team 博客
-<a target="_blank" href="http://talkingdata.me/"> voyagelab </a>
-里面有一些关于 iOS 、Android 和 机器学习 的文章。
-
+推荐一下我学习Java的网站
+<a target="_blank" href="http://www.imooc.com"> imooc </a>
+网站内容有时候会偏基础，但是博主很喜欢讲课的界面，没事儿可以接受0.5、1.0等倍速
 <p>
+推荐一下面试求经的网站:<a target="_blank" href="https://www.nowcoder.com"> 牛客网 </a>记得有人说过：逃避算法基本上是放弃成为一流
 
+<p>当然还有好多一流的大神在各个论坛上发帖，各种开源的东西从来都不匮乏,大家一定要勤于动手~~~~
 <h3> 我们的博客 </h3>  
 
 <p>
 
-是的，这个博客是我们大家的，目前已经有很大一部分人在使用我的博客模板了，我也很高兴大家使用我的模板。
-
-<p>
-
-如果你想搭建一个跟我一样的博客，可以看我的 
+如果你想搭建一个跟我一样的博客，可以参考
 <a href="/2016/10/jekyll_tutorials1/"> Jekyll 搭建个人博客 </a>
 教程
-
-<p>
-
-有关于博客主题的建议和意见都可以提给我，让我们一起来打造一个精美的主题吧~ 
-
 <p> 
+博客源码在 <a target="_blank" href='https://github.com/nilzzzz/nilzzzz.github.io/'>Github</a> 上~
+<p>
+我参考的jekyll框架源码在<a target="_blank" href='https://github.com/leopardpan/leopardpan.github.io/'>Github</a>感谢大神的不吝赐教！
 
-博客源码在 <a target="_blank" href='https://github.com/leopardpan/leopardpan.github.io/'>Github</a> 上，你的 Star 是我更新的动力，谢谢~
-
-{% include comments.html %}
 
 
 
