@@ -31,6 +31,7 @@ title: 关于我
 我参考的jekyll框架源码在<a target="_blank" href='https://github.com/leopardpan/leopardpan.github.io/'>Github</a>感谢大神的不吝赐教！
 <p> 
 我的博客源码在 <a target="_blank" href='https://github.com/nilzzzz/nilzzzz.github.io/'>Github</a> 上~在参考大神的mac版本后在window10上成功搭建还是小小的激动那~~~
+快来star吧，拜托拜托~~~
 
 
 
