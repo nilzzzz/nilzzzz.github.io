@@ -85,12 +85,12 @@ $ jekyll new username.github.io
 ```
 $ cd username.github.io
 ```
-##安装Bundle
+#安装Bundle
  
 ```
 $gem install bundle 
 ```
-##Gemfile和bundle安装
+#Gemfile和bundle安装
 在根目录下创建一个叫Gemfile的文件，注意没有后缀，输入：
 ```
 source "http://rubygems.org"
