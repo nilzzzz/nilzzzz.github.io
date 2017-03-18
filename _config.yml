@@ -78,16 +78,16 @@ nav:
 gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
-description: 欢迎来到我的个人站~
-url: "https://nilzzz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+#description: 欢迎来到我的个人站~
+#url: "https://nilzzz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: jekyllrb
+#github_username:  jekyll
 
 # Build settings
-markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
+#markdown: kramdown
+#theme: minima
+#gems:
+ # - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
