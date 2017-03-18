@@ -18,13 +18,13 @@ tags: 博客
 **注意ruby及RubyDevKit的版本一定要对应，否则会出错**
 例如我安装的是**Ruby 2.3.3 (x64)**对应的是**DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe**
 
-###Ruby安装
+### Ruby安装
  
  jekyll本身基于Ruby开发，因此，想要在本地构建一个测试环境需要具有Ruby的开发和运行环境，在windows下使用[Rubyinstaller](http://rubyinstaller.org/downloads/)安装
 
  windows的安装直接下一步就好了
 
-#RubyDevKit安装
+### RubyDevKit安装
 从这里下载[Devkit],注意版本要与Ruby版本一致
 
 下载下来是一个sxs文件，如果你安装有7-zip，可以直接双击，它会自解压到你所选择的目录。
@@ -62,7 +62,7 @@ $ruby setup.rb
 $ruby dk.rb install
 ```   
 
-#安装jekyll
+# 安装jekyll
 　　Jekyll 是一个免费的简单静态网页生成工具，可以配合第三方服务例如： Disqus（评论）、多说(评论) 以及分享 等等扩展功能，Jekyll 可以直接部署在 Github（国外） 或 Coding（国内） 上，可以绑定自己的域名。[Jekyll中文文档](http://jekyll.bootcss.com/)、[Jekyll英文文档](https://jekyllrb.com/)、[Jekyll主题列表](http://jekyllthemes.org/)。
 
 
@@ -85,12 +85,12 @@ $ jekyll new username.github.io
 ```
 $ cd username.github.io
 ```
-#安装Bundle
+# 安装Bundle
  
 ```
 $gem install bundle 
 ```
-#Gemfile和bundle安装
+# Gemfile和bundle安装
 在根目录下创建一个叫Gemfile的文件，注意没有后缀，输入：
 ```
 source "http://rubygems.org"
@@ -156,7 +156,7 @@ $ jekyll serve
 
 到此，博客初步搭建算是完成了
 
-###项目主页
+### 项目主页
 项目主页的目的是为提供一个展示功能的网站，方便项目推广。但是也可以用来做个人博客。在GitHub还提供了多种模板供你选择：
 ![此处输入图片的描述][2]
 博客基于jekyll，而新手往往摸不着头脑，幸好有一些[现成的模板](http://jekyllthemes.org)可以直接使用:
