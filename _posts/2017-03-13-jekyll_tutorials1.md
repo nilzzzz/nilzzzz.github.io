@@ -62,7 +62,7 @@ $ruby setup.rb
 $ruby dk.rb install
 ```   
 
-# 安装jekyll
+### 安装jekyll
 　　Jekyll 是一个免费的简单静态网页生成工具，可以配合第三方服务例如： Disqus（评论）、多说(评论) 以及分享 等等扩展功能，Jekyll 可以直接部署在 Github（国外） 或 Coding（国内） 上，可以绑定自己的域名。[Jekyll中文文档](http://jekyll.bootcss.com/)、[Jekyll英文文档](https://jekyllrb.com/)、[Jekyll主题列表](http://jekyllthemes.org/)。
 
 
@@ -85,12 +85,12 @@ $ jekyll new username.github.io
 ```
 $ cd username.github.io
 ```
-# 安装Bundle
+### 安装Bundle
  
 ```
 $gem install bundle 
 ```
-# Gemfile和bundle安装
+### Gemfile和bundle安装
 在根目录下创建一个叫Gemfile的文件，注意没有后缀，输入：
 ```
 source "http://rubygems.org"
