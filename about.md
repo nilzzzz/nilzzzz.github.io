@@ -25,7 +25,7 @@ title: 关于我
 <p>
 
 如果你想搭建一个跟我一样的博客，可以参考
-<a href="/2016/10/jekyll_tutorials1/"> Jekyll 搭建个人博客 </a>
+<a href="/2017/03/jekyll_tutorials1/"> Jekyll 搭建个人博客 </a>
 教程
 <p>
 我参考的jekyll框架源码在<a target="_blank" href='https://github.com/leopardpan/leopardpan.github.io/'>Github</a>感谢大神的不吝赐教！
