@@ -3,10 +3,12 @@ layout: post
 title: Java编程思想
 tag: Java笔记
 ---
- 原文转载自：https://github.com/lanxuezaipiao/ReadingNotes/blob/master/Java读书笔记
+原文转载自：
+https://github.com/lanxuezaipiao/ReadingNotes/blob/master/Java读书笔记
 ### 1. Java中的多态性理解（注意与C++区分）
 
-Java中除了static方法和final方法（private方法本质上属于final方法，因为不能被子类访问）之外，其它所有的方法都是动态绑定，这意味着通常情况下，我们不必判定是否应该进行动态绑定—它会自动发生。
+Java中除了static方法和final方法（private方法本质上属于final方法，因为不能被子类访问）之外，其它所有的方法都是动态绑定，
+这意味着通常情况下，我们不必判定是否应该进行动态绑定—它会自动发生。
 final方法会使编译器生成更有效的代码，这也是为什么说声明为final方法能在一定程度上提高性能（效果不明显）。
 如果某个方法是静态的，它的行为就不具有多态性
 ```
@@ -81,6 +83,7 @@ public class PolyConstructors {
 
 输出：
 Glyph() before draw() RoundGlyph.draw(). radius = 0 Glyph() after draw() RoundGlyph.RoundGlyph(). radius = 5
+
 ```
 为什么会这样输出？这就要明确掌握Java中构造函数的调用顺序：
 
@@ -88,9 +91,11 @@ Glyph() before draw() RoundGlyph.draw(). radius = 0 Glyph() after draw() RoundGl
 > * （2）调用基类构造函数。从根开始递归下去，因为多态性此时调用子类覆盖后的draw()方法（要在调用RoundGlyph构造函数之前调用），由于步骤1的缘故，我们此时会发现radius的值为0；
 > * （3）按声明顺序调用成员的初始化方法； 
 > * （4）最后调用子类的构造函数。
-只有非private方法才可以被覆盖，但是还需要密切注意覆盖private方法的现象，这时虽然编译器不会报错，但是也不会按照我们所期望的来执行，即覆盖private方法对子类来说是一个新的方法而非重载方法。因此，在子类中，新方法名最好不要与基类的private方法采取同一名字（虽然没关系，但容易误解，以为能够覆盖基类的private方法）。
+只有非private方法才可以被覆盖，但是还需要密切注意覆盖private方法的现象，这时虽然编译器不会报错，但是也不会按照我们所期望的来执行，
+即覆盖private方法对子类来说是一个新的方法而非重载方法。因此，在子类中，新方法名最好不要与基类的private方法采取同一名字（虽然没关系，但容易误解，以为能够覆盖基类的private方法）。
 
 Java类中属性域的访问操作都由编译器解析，因此不是多态的。父类和子类的同名属性都会分配不同的存储空间，如下：
+
 ```
 // Direct field access is determined at compile time.
 class Super {
