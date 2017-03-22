@@ -3,8 +3,7 @@ layout: post
 title: Java编程思想
 tag: Java笔记
 ---
-原文转载自：
-https://github.com/lanxuezaipiao/ReadingNotes/blob/master/Java读书笔记
+[点击查看原文链接](https://github.com/lanxuezaipiao/ReadingNotes/blob/master/Java读书笔记)
 ### 1. Java中的多态性理解（注意与C++区分）
 
 Java中除了static方法和final方法（private方法本质上属于final方法，因为不能被子类访问）之外，其它所有的方法都是动态绑定，
