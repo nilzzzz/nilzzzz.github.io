@@ -165,7 +165,7 @@ print p_node.name,p_node.get_text()
 > 获取p段落文字 p The Dormouse's story
 
 
-  [1]: http://www.imooc.com/learn/563
+  
   [2]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B.png
   [3]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B2.png
   [4]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E6%9E%B6%E6%9E%84.png
