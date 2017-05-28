@@ -22,15 +22,14 @@ tag: python
 <dd class="lemmaWgt-lemmaTitle-title"><h1>***</h1></dd>
 ```
 
-简介：<br/>
+简介：
 
 ```
 <div class="lemma-summary">***</div>
 ```
 
-**页面编码:**UTF-8
-
 ### 实例代码
+
 1、spider_main.py
 
 ```
@@ -190,9 +189,24 @@ class HtmlOutputer(object):
         fout.write("</html>")
 ```
 
+### 测试结果
+1000个测试数据部分
+![此处输入图片的描述][1]
+在项目目录下右键或F5刷新，可以看到output.html,再在此HTML右键选择properti看到项目路径，在浏览器中打开
+![此处输入图片的描述][2]
+![此处输入图片的描述][3]
+**页面编码：UTF-8**
 ### 问题
 一个网页可以有不一样的url吗？<br/>
-python百度百科入口页：http://baike.baidu.com/link?url=Wf76vvoFrt-HJxx4hGR41WI0k-XmCuqVt7yRvY_37j2QELttcE11FsSDfFfadcPeflMaBjdB_FC5_YX3uxHZUK<br/>
+python百度百科入口页：http://baike.baidu.com/link?url=Wf76vvoFrt-HJxx4hGR41WI0k-XmCuqVt7yRvY_37j2QELttcE11FsSDfFfadcPeflMaBjdB_FC5_YX3uxHZUK
 数字的入口页：http://baike.baidu.com/view/21087.htm<br/>
-http://baike.baidu.com/item/Python
-也能打开词条
+现在用的是这个网址http://baike.baidu.com/item/Python<br/>
+也能打开词条<br/>
+[更多问题请自行imooc](http://www.imooc.com/learn/563),改不出BUG很烦，但是改完后超爽有木有！！！！
+### 巴拉巴拉
+> 这个端午假期，很享受。这学期到这个假期之前一直忙于练车，虽然认识了不少朋友（我才不会告诉你他们有多可爱，我们教练有多逗），但是练车看似很好玩，但是这一阶段下来还是费了不少心力，学习时间被分割了不少，耽误了清明假期，五一假期还好有个端午（知足常乐）。
+> 爬虫之路很长，学到东西很开心，但是想走的远任重而道远（老师的要求我看我有点儿费劲去达到），开学又不知道会忙些什么乱七八糟的，假期时间自由的感觉好爽，学习到东西真的会让人踏实不少（烦心的事儿很多，敬告自己分轻重）。
+
+  [1]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png
+  [2]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C2.png
+  [3]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C1.png
