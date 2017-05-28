@@ -3,7 +3,7 @@ layout: post
 title: 爬虫
 tag: python
 ---
-imooc视频学习：http://www.imooc.com/learn/563
+
 ### 爬虫简介
 
 ![此处输入图片的描述][2]
