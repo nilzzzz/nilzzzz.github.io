@@ -81,7 +81,8 @@ response=urllib2.urlopen("http://www.baidu.com/")
 ### 网页解析器-Beautiful Soup
 Beautiful Soup
 --Python第三方库用于从HTML或XML中提取数据
---官网：https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html
+--官网：https://www.crummy.com/software/BeautifulS
+<br/>oup/bs4/doc/index.zh.html
 
 创建BeautifulSoup对象
 ```
