@@ -120,7 +120,8 @@ node.get_text()
 
 ### BeautifulSoup实例测试
 测试环境：eclipse+pydev+python2.7
-配置中遇到的问题及解决办法：http://blog.csdn.net/xue_changkong/article/details/46755639
+配置中遇到的问题及解决办法：http://blog.csdn.net/xue_changkong<br/>
+/article/details/46755639
 ```
 #coding:utf8
 import re
