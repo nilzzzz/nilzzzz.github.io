@@ -200,7 +200,8 @@ class HtmlOutputer(object):
 一个网页可以有不一样的url吗？<br/>
 python百度百科入口页：
 http://baike.baidu.com/link?url=Wf76vvoFrt-HJxx4hGR41WI0k-XmCuqVt7yRvY<br/>
-_37j2QELttcE11FsSDfFfadcPeflMaBjdB_FC5_YX3uxHZUK
+_37j2QELttcE11FsSDfFfadcPeflMaBjdB_<br/>
+FC5_YX3uxHZUK
 数字的入口页：http://baike.baidu.com/view/21087.htm<br/>
 现在用的是这个网址http://baike.baidu.com/item/Python<br/>
 也能打开词条<br/>
