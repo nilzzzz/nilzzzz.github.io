@@ -9,6 +9,7 @@ tag: 爬虫
 
 > python标准库中的socket模块主要应用于底层网络协议，编写程序要从底层开始构建，对于大多数程序员来说，网络编程都是针对应用协议进行的。
 
+> urllib面向HTTP协议，而网络上的网站应用都是基于HTTP协议的。urllib主要处理URL，使用urllib操作URL可以像使用和打开本地文件一样的操作，非常简单。
 
     #encoding:utf-8
     import urllib.request
@@ -41,6 +42,8 @@ tag: 爬虫
 > request.urlretrieve(url[, filename[, reporthook[,
 > data]]])参数说明：url：外部或者本地urlfilename：指定了保存到本地的路径（如果未指定该参数，urllib会生成一个临时文件来保存数据）；reporthook：是一个回调函数，当连接上服务器、以及相应的数据块传输完毕的时候会触发该回调。我们可以利用这个回调函数来显示当前的下载进度。data：指post到服务器的数据。该方法返回一个包含两个元素的元组(filename,
 > headers)，filename表示保存到本地的路径，header表示服务器的响应头。
+
+
 
 ```
 import urllib.request 
