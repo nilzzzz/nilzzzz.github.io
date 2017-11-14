@@ -6,10 +6,10 @@ description: 欢迎来到我的个人站~
 # 头像里面的标题
 avatarTitle: 肖申克赫本
 # 头像里面的描述
-avatarDesc: Java 学习/后台开发
+avatarDesc: Java 学习/后台开发/信息安全
 # Comment
 comment:
-    disqus: https-nilzzzz-github-io
+    Gitment: https-nilzzzz-github-io
     #duoshuo: https-nilzzzz-github-io
 
 # Social
