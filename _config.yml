@@ -8,10 +8,12 @@ avatarTitle: 肖申克赫本
 # 头像里面的描述
 avatarDesc: Java 学习/后台开发/信息安全
 # Comment
-comment:
-    Gitment: https-nilzzzz-github-io
+#comment:
     #duoshuo: https-nilzzzz-github-io
-
+#Gitment
+gitment:
+    id: 2027b8f63f3fb6054a61
+    secret: 24823b47a3f7ed2aa0ffc5f3b9f5a4670b46282e
 # Social
 social:
     weibo: 5548352763
