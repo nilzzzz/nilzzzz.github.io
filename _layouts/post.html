@@ -12,12 +12,28 @@ layout: default
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
     </div>
+	
+	
   </header>
 
   <section class="post">
     {{ content }}
 
   </section>
+  <div id="gitmentContainer"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+      var gitment = new Gitment({
+    owner: 'nilzzzz',
+    repo: 'https://github.com/nilzzzz/nilzzzz.github.io.git',
+    oauth: {
+        client_id: '2027b8f63f3fb6054a61',
+        client_secret: '24823b47a3f7ed2aa0ffc5f3b9f5a4670b46282e',
+    },
+   });
+     gitment.render('gitmentContainer');
+</script>
 </article>
 
 {% include new-old.html %}
