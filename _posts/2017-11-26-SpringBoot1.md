@@ -82,7 +82,73 @@ tag: Spring Boot
  2. 可适当的运用一些设计模式使代码结构更加清晰明了，比如工厂模式等。
  
 实例源码：https://github.com/nilzxq/classLoader.git
+### Spring Boot项目搭建
+环境准备：<br/>
+下载spring-tool-suite http://spring.io/tools/<br/>
+安装spring-tool-suite<br/>
+解压后直接运行
 
+搭建项目：<br/>
+file->new->spring starter project
+![此处输入图片的描述][1]
+![此处输入图片的描述][2]
+### Spring Boot热部署的实现
+**源码：https://github.com/nilzxq/HotDeploy**<br/>
+两种实现方式：<br/>
+使用Spring Loaded<br/>
+
+使用spring-boot-devtools<br/>
+
+**使用Spring Loaded热部署实现**
+ 1. Maven启动方式 在pom.xml添加依赖
+
+     <!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>springloaded</artifactId>
+        <version>1.2.6.RELEASE</version>
+    </dependency>
+在控制台启动spring-boot（进入项目目录）,输入命令：**mvn spring-boot:run**
+ ![此处输入图片的描述][3]
+ 2. run as-Java application
+ -javaagent:[jar包本地路径] -noverify
+ ![此处输入图片的描述][4]
+
+**使用spring-boot-devtools热部署实现**
+pom.xml直接添加依赖：
+
+ <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+		<optional>true</optional>
+   </dependency>
+  
+### Spring Boot发布方式
+教程：https://www.imooc.com/video/16072
+  发布方式：<br/>
+ 1. 构建Jar包，命令行运行SpringBoot程序
+ ![此处输入图片的描述][5]
+![此处输入图片的描述][6]
+
+ 2. 构建War包，发布到Tomcat
+ ![此处输入图片的描述][7]
+把war包拷贝到tomcat的webapps的目录下，启动tomcat后会解压出文件夹，注意路径变换
+![此处输入图片的描述][8]
+![此处输入图片的描述][9]
+  项目中出现红×，在项目目录右键Maven->Update Project
+ 
+  
+
+
+  [1]: http://omztq7zo1.bkt.clouddn.com/spring-tool-1.png
+  [2]: http://omztq7zo1.bkt.clouddn.com/spring-tool-2.png
+  [3]: http://omztq7zo1.bkt.clouddn.com/spring-tool-3.png
+  [4]: http://omztq7zo1.bkt.clouddn.com/spring-tool-4.png
+  [5]: http://omztq7zo1.bkt.clouddn.com/spring-tool-5.png
+  [6]: http://omztq7zo1.bkt.clouddn.com/spring-tool-6.png
+  [7]: http://omztq7zo1.bkt.clouddn.com/spring-tool-8.png
+  [8]: http://omztq7zo1.bkt.clouddn.com/spring-tool-10.png
+  [9]: http://omztq7zo1.bkt.clouddn.com/spring-tool-11.png
 
 
 
