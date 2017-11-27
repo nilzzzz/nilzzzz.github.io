@@ -99,32 +99,36 @@ file->new->spring starter project
 
 使用spring-boot-devtools<br/>
 
-**使用Spring Loaded热部署实现**
+**使用Spring Loaded热部署实现**<br/>
  1. Maven启动方式 在pom.xml添加依赖
 
-     <!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>springloaded</artifactId>
-        <version>1.2.6.RELEASE</version>
-    </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+            <version>1.2.6.RELEASE</version>
+        </dependency>
+        
+	
 在控制台启动spring-boot（进入项目目录）,输入命令：**mvn spring-boot:run**
  ![此处输入图片的描述][3]
- 2. run as-Java application
+ 2. run as-Java application <br/>
  -javaagent:[jar包本地路径] -noverify
  ![此处输入图片的描述][4]
 
 **使用spring-boot-devtools热部署实现**
-pom.xml直接添加依赖：
+pom.xml直接添加依赖：<br/>
 
- <dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-devtools</artifactId>
-		<optional>true</optional>
-   </dependency>
   
+     <dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-devtools</artifactId>
+    		<optional>true</optional>
+       </dependency>
+
+	   
 ### Spring Boot发布方式
-教程：https://www.imooc.com/video/16072
+教程：https://www.imooc.com/video/16072<br/>
   发布方式：<br/>
  1. 构建Jar包，命令行运行SpringBoot程序
  ![此处输入图片的描述][5]
