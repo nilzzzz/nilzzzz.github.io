@@ -1,0 +1,94 @@
+---
+layout: post
+title: Spark从零开始
+tag: Spark
+---
+
+### Spark简介
+Spark是什么<br/>
+Spark是一个<font color="red">快速</font>且<font color="red">通用</font>的集群计算平台<br/>
+
+Spark是快速的<br/>
+Spark扩充了流行的Mapreduce计算模型<br/>
+Spark是<font color="red">基于内存</font>的计算<br/>
+
+Spark是通用的<br/>
+Spark的设计容纳了其它分布式系统拥有的功能<br/>
+批处理，迭代式计算，交互查询和流处理等<br/>
+*优点：*降低了维护成本
+
+### Spark的特点
+Spark是高度开放的<br/>
+Spark提供了Python，Java，Scala，SQL的API和丰富的内置库。<br/>
+Spark和其它的大数据工具整合的很好，包括hadoop，kafka等。<br/>
+
+### Spark的历史
+诞生于2009年，加州大学伯克利分校RAD实验室的一个研究项目<br/>
+最初是基于Hadoop Mapreduce的<br/>
+发现Mapreduce在迭代式计算和交互式上低效，引入了内存存储<br/>
+
+ - 2010.3 Spark开源 
+ - 2011   AMP实验室在Spark上开发高级组件，像Spark Streaming
+ - 2013   转移到了Apache下，不久便成为顶级项目了
+
+### Spark的组件
+ Spark Core：
+ 
+
+ - 包含Spark的基本功能，包含任务调度，内存管理，容错机制等.
+ - 内部定义了RDDs（弹性分布式数据集）
+ - 提供了很多APIs来创建和操作这些RDDs
+ - 应用场景，为其他组件提供底层的服务
+
+
+Spark SQL：
+
+ - 是Spark处理结构化数据的库，就像Hive SQL,Mysql一样
+ - 应用场景，企业中用来做报表统计
+ 
+Spark Streaming：
+ - 是实时数据流处理组件，类似Strom。
+ - Spark Streaming提供了API来操作实时流数据
+ - 应用场景，企业中用来从Kafka接收数据做实时统计
+ 
+Mlib：
+ - 一个包含通用机器学习功能的包，Machine Learning lib
+ - 包含分类，聚类，回归等，还包含模型评估，和数据导入
+ - Mlib提供的上面这些方法，都支持集群是上的横向扩展
+ - 应用场景，机器学习
+ 
+Graphx:
+ - 是处理图的库（例如，社交网络图），并进行图的并行计算。
+ - 像Spark Streaming，Spark SQL一样，它也继承了RDD API
+ - 它提供了各种图的操作，和常用的图算法，例如RangeRank算法
+ - 应用场景，图计算
+ 
+Cluster Managers:
+ - 就是集群管理，Spark自带一个集群管理是单独调度器
+ - 常见集群管理包括Hadoop YARN，Apache Mesos
+
+**紧密集成的优点：**<br/>
+
+ - Spark底层优化了，基于Spark底层的组件，也得到了相应的优化
+ - 紧密集成，节省了各个组件组合使用时的部署，测试等时间
+ - 向Spark增加新的组件时，其它组件，可立刻享用新组件的功能
+
+### Hadoop应用场景 vs Spark应用场景
+Hadoop应用场景:<br/>
+离线处理<br/>
+对时效性要求不高<br/>
+
+Spark应用场景:<br/>
+时效性要求高的场景<br/>
+机器学习等领域<br/>
+
+Doung Cutting的观点:<br/>
+这是生态系统，每个组件都有其作用，各善其职即可<br/>
+Spark不具有HDFS的存储能力，要借助HDFS等持久化数据<br/>
+大数据将会孕育出更多的新技术<br/>
+
+
+
+  
+
+  
