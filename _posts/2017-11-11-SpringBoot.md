@@ -1,6 +1,6 @@
 ---
 layout: post
-title: spring boot入门hello world
+title: springBoot入门hello world
 tag: SpringBoot
 ---
 

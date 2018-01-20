@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SpringBoot热部署
-tag: Spring Boot
+tag: SpringBoot
 ---
 
 ### 热部署的使用场景
