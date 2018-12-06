@@ -144,15 +144,15 @@ pom.xml直接添加依赖：<br/>
   
 
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/spring-tool-1.png
-  [2]: http://omztq7zo1.bkt.clouddn.com/spring-tool-2.png
-  [3]: http://omztq7zo1.bkt.clouddn.com/spring-tool-3.png
-  [4]: http://omztq7zo1.bkt.clouddn.com/spring-tool-4.png
-  [5]: http://omztq7zo1.bkt.clouddn.com/spring-tool-5.png
-  [6]: http://omztq7zo1.bkt.clouddn.com/spring-tool-6.png
-  [7]: http://omztq7zo1.bkt.clouddn.com/spring-tool-8.png
-  [8]: http://omztq7zo1.bkt.clouddn.com/spring-tool-10.png
-  [9]: http://omztq7zo1.bkt.clouddn.com/spring-tool-11.png
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-1.png
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-2.png
+  [3]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-3.png
+  [4]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-4.png
+  [5]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-5.png
+  [6]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-6.png
+  [7]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-8.png
+  [8]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-10.png
+  [9]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-11.png
 
 
 

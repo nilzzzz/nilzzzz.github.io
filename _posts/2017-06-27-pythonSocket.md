@@ -39,9 +39,9 @@ tag: python
  - 2 连接后发送数据和接收数据          # s.sendall(), s.recv() 
  - 3 传输完毕后，关闭套接字          #s.close()
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/socket.png
-  [2]: http://omztq7zo1.bkt.clouddn.com/socket1.png
-  [3]: http://omztq7zo1.bkt.clouddn.com/socket2.png
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/socket.png
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/socket1.png
+  [3]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/socket2.png
   
 #### 用socket建立服务器端程序
   

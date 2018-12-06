@@ -168,14 +168,14 @@ print p_node.name,p_node.get_text()
 
 
   
-  [2]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B.png
-  [3]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B2.png
-  [4]: http://omztq7zo1.bkt.clouddn.com/%E7%88%AC%E8%99%AB%E6%9E%B6%E6%9E%84.png
-  [5]: http://omztq7zo1.bkt.clouddn.com/%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png
-  [6]: http://omztq7zo1.bkt.clouddn.com/URL%E7%AE%A1%E7%90%86%E5%99%A8.png
-  [7]: http://omztq7zo1.bkt.clouddn.com/url%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.png
-  [8]: http://omztq7zo1.bkt.clouddn.com/urllib2-2.png
-  [9]: http://omztq7zo1.bkt.clouddn.com/urllib2-3.png
-  [10]: http://omztq7zo1.bkt.clouddn.com/%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%99%A8.png
-  [11]: http://omztq7zo1.bkt.clouddn.com/%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%99%A82.png
-  [12]: http://omztq7zo1.bkt.clouddn.com/%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%99%A83.png
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B.png
+  [3]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B2.png
+  [4]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%88%AC%E8%99%AB%E6%9E%B6%E6%9E%84.png
+  [5]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png
+  [6]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/URL%E7%AE%A1%E7%90%86%E5%99%A8.png
+  [7]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/url%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.png
+  [8]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/urllib2-2.png
+  [9]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/urllib2-3.png
+  [10]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%99%A8.png
+  [11]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%99%A82.png
+  [12]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%99%A83.png

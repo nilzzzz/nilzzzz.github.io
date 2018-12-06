@@ -638,5 +638,5 @@ private void readObject(ObjectInputStream stream)
 可以用transient关键字逐个字段地关闭序列化，它的意思是**“不用麻烦你保存或恢复数据—我自己会处理的”**。由于Externalizable对象在默认情况下不保存它们的任何字段，所以transient关键字只能和Serializable对象一起使用。
 
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/readnote1.png
-  [2]: http://omztq7zo1.bkt.clouddn.com/readnote2.png
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/readnote1.png
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/readnote2.png

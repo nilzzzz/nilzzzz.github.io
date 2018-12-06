@@ -76,11 +76,11 @@ tag: 随笔
 **最后一遍，新年快乐，2018越来越好~**
 
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/%E9%95%BF%E5%9F%8E-%E5%85%AB%E8%BE%BE%E5%B2%AD.jpg
-  [2]: http://omztq7zo1.bkt.clouddn.com/%E9%95%BF%E5%9F%8E1.jpg
-  [3]: http://omztq7zo1.bkt.clouddn.com/%E5%8D%81%E4%B8%80%E6%A5%BC.jpg
-  [4]: http://omztq7zo1.bkt.clouddn.com/%E7%86%8A.jpg
-  [5]: http://omztq7zo1.bkt.clouddn.com/%E9%95%BF%E5%9F%8E2.jpg
-  [6]: http://omztq7zo1.bkt.clouddn.com/%E5%AE%9A%E9%99%B5.jpg
-  [7]: http://omztq7zo1.bkt.clouddn.com/%E5%8A%A8%E7%89%A9%E5%9B%AD-%E5%A4%A9%E9%B9%85.jpg
-  [8]: http://omztq7zo1.bkt.clouddn.com/%E5%8A%A8%E7%89%A9%E5%9B%AD-%E9%97%A8%E7%A5%A8.jpg
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E9%95%BF%E5%9F%8E-%E5%85%AB%E8%BE%BE%E5%B2%AD.jpg
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E9%95%BF%E5%9F%8E1.jpg
+  [3]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%8D%81%E4%B8%80%E6%A5%BC.jpg
+  [4]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E7%86%8A.jpg
+  [5]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E9%95%BF%E5%9F%8E2.jpg
+  [6]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%AE%9A%E9%99%B5.jpg
+  [7]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%8A%A8%E7%89%A9%E5%9B%AD-%E5%A4%A9%E9%B9%85.jpg
+  [8]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%8A%A8%E7%89%A9%E5%9B%AD-%E9%97%A8%E7%A5%A8.jpg

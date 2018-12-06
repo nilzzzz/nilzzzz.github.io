@@ -26,4 +26,4 @@ tag: 随笔
 >* Hello Java！
 
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/Java.jpg
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/Java.jpg

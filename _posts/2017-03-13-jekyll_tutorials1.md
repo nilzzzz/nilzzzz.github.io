@@ -257,5 +257,5 @@ git push origin master
 [本文参考](http://www.pchou.info/ssgithubPage/2013-01-05-build-github-blog-page-04.html) 感谢大神们的细心指导，无私分享,比心
 
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/devit.png
-  [2]: http://omztq7zo1.bkt.clouddn.com/themes.png
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/devit.png
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/themes.png

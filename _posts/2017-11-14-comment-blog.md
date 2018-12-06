@@ -54,6 +54,6 @@ Github头像下拉菜单 > Settings > 左边Developer settings下的OAuth Applic
 有问题微博私或评论留言哟~比心~<br/>
 
 
-  [1]: http://omztq7zo1.bkt.clouddn.com/comment-blog.png
-  [2]: http://omztq7zo1.bkt.clouddn.com/comment-blog1.png
-  [3]: http://omztq7zo1.bkt.clouddn.com/comment.png
+  [1]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/comment-blog.png
+  [2]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/comment-blog1.png
+  [3]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/comment.png

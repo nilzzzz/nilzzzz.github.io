@@ -134,10 +134,10 @@ Kafka是一种高吞吐量的分布式发布订阅消息系统。详细介绍可
   [2]: http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
   [3]: https://zookeeper.apache.org/releases.html
   [4]: http://archive.apache.org/dist/zookeeper/
-  [5]: http://omztq7zo1.bkt.clouddn.com/zookeeper.png
+  [5]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/zookeeper.png
   [6]: http://kafka.apache.org/downloads
-  [7]: http://omztq7zo1.bkt.clouddn.com/kafka.png
-  [8]: http://omztq7zo1.bkt.clouddn.com/kafka%20create%20topic3.png
-  [9]: http://omztq7zo1.bkt.clouddn.com/kafka%20create%20topic2.png
-  [10]: http://omztq7zo1.bkt.clouddn.com/kafka%20consumer1.png
-  [11]: http://omztq7zo1.bkt.clouddn.com/kafka%20wrong.png
+  [7]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/kafka.png
+  [8]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/kafka%20create%20topic3.png
+  [9]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/kafka%20create%20topic2.png
+  [10]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/kafka%20consumer1.png
+  [11]: https://blog-1258233124.cos.ap-beijing.myqcloud.com/kafka%20wrong.png
