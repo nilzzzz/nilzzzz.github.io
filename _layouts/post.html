@@ -34,15 +34,16 @@ layout: default
 <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
-      var gitment = new Gitment({
+var gitment = new Gitment({
+	id: '\{\{ page.date \}\}',
     owner: 'nilzzzz',
     repo: 'nilzzzz.github.io',
     oauth: {
         client_id: '2027b8f63f3fb6054a61',
         client_secret: '24823b47a3f7ed2aa0ffc5f3b9f5a4670b46282e',
     },
-   });
-     gitment.render('gitmentContainer');
+});
+gitment.render('container');
 </script>
 </article>
 
