@@ -1,0 +1,156 @@
+I"C<h3 id="uedit32exe-pe头分析">uedit32.exe PE头分析</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe12.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe13.png" alt="此处输入图片的描述" /></p>
+<h3 id="1dos-mz头image_dos_header64字节">1.DOS MZ头IMAGE_DOS_HEADER（64字节）</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe11.png" alt="此处输入图片的描述" />
+word：二字节 dword：四字节
+ IMAGE_DOS_HEADER STRUCT</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>成员</th>
+      <th style="text-align: right">偏移量</th>
+      <th style="text-align: right">大小</th>
+      <th style="text-align: right">值</th>
+      <th style="text-align: center">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>e_magic</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">5A4D</td>
+      <td style="text-align: center">EXE标志，”MZ”</td>
+    </tr>
+    <tr>
+      <td>e_cblp</td>
+      <td style="text-align: right">00000002</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0090</td>
+      <td style="text-align: center">最后页中的节数，为144字节</td>
+    </tr>
+    <tr>
+      <td>e_cp</td>
+      <td style="text-align: right">00000004</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0003</td>
+      <td style="text-align: center">文件中全部和部分页数，为3页</td>
+    </tr>
+    <tr>
+      <td>e_crlc</td>
+      <td style="text-align: right">00000006</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">重定位表中的指针数，0个</td>
+    </tr>
+    <tr>
+      <td>e_cparhdr</td>
+      <td style="text-align: right">00000008</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0004</td>
+      <td style="text-align: center">头部尺寸，以段落为单位，为4个段落</td>
+    </tr>
+    <tr>
+      <td>e_minalloc</td>
+      <td style="text-align: right">0000000A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">所需的最小附加段,值为10</td>
+    </tr>
+    <tr>
+      <td>e_maxalloc</td>
+      <td style="text-align: right">0000000C</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">FFFF</td>
+      <td style="text-align: center">所需的最大附加段,值为65535</td>
+    </tr>
+    <tr>
+      <td>e_ss</td>
+      <td style="text-align: right">0000000E</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">初始的ss值（相对偏移量），为0</td>
+    </tr>
+    <tr>
+      <td>e_sp</td>
+      <td style="text-align: right">00000010</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">00b8</td>
+      <td style="text-align: center">初始的sp值,为184</td>
+    </tr>
+    <tr>
+      <td>e_csum</td>
+      <td style="text-align: right">00000012</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">补码校验和，为0</td>
+    </tr>
+    <tr>
+      <td>e_ip</td>
+      <td style="text-align: right">00000014</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">初始IP值,值为0</td>
+    </tr>
+    <tr>
+      <td>e_cs</td>
+      <td style="text-align: right">00000016</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">初始的CS值,值为0</td>
+    </tr>
+    <tr>
+      <td>e_lfarlc</td>
+      <td style="text-align: right">00000018</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0040</td>
+      <td style="text-align: center">重定位表的字节偏移量,值为64</td>
+    </tr>
+    <tr>
+      <td>e_ovno</td>
+      <td style="text-align: right">0000001A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">所需的最小附加段,值为10</td>
+    </tr>
+    <tr>
+      <td>e_res<a href="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe14.png">4</a></td>
+      <td style="text-align: right">0000001c 0000001E 00000020 00000022</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000 0000 0000 0000</td>
+      <td style="text-align: center">保留字</td>
+    </tr>
+    <tr>
+      <td>e_oemid</td>
+      <td style="text-align: right">00000024</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">OEM标志符（相对e_oeminfo）,为0</td>
+    </tr>
+    <tr>
+      <td>e_oeminfo</td>
+      <td style="text-align: right">00000026</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">OEM信息，为0</td>
+    </tr>
+    <tr>
+      <td>e_res2[10]</td>
+      <td style="text-align: right">00000028 0000002A 0000002C 0000002E 00000030 00000032 00000034 00000036 00000038 0000003A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">保留字</td>
+    </tr>
+    <tr>
+      <td>e_lfanew</td>
+      <td style="text-align: right">0000003c</td>
+      <td style="text-align: right">dword</td>
+      <td style="text-align: right">00000110</td>
+      <td style="text-align: center">PE头的相对文件的偏移地址，为0x110</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

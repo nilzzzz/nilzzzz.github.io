@@ -1,0 +1,135 @@
+I"<p><a href="http://acm.hrbust.edu.cn/problems">oj-acm专项分类练习</a></p>
+<h3 id="二分查找算法">二分查找算法</h3>
+<p>简单定义：在一个<font color="red">单调有序</font>的集合中查找元素，每次将集合分为左右两部分，判断解在哪个部分中并调整集合上下界，重复直到找到目标元素。<br />
+时间复杂度：O (logn)，优于直接顺序查找O(n)<br />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E4%BA%8C%E5%88%861.jpg" alt="此处输入图片的描述" /></p>
+
+<h3 id="hrbust1429">Hrbust1429</h3>
+<p>题目链接：http://acm.hrbust.edu.cn/index.php?m=ProblemSet&amp;a=showProblem&amp;problem_id=1429<br />
+<strong>Description</strong><br />
+已知一个凸多边形A（包含n个点，点按照顺时针给出），和一个点集B（包含m个点），请判断这m个点是否都严格在凸多边形A内部。<br />
+<strong>Input</strong><br />
+输入包含多组测试数据。<br />
+对于每组测试数据：<br />
+第1行，包含一个整数n (3≤n ≤105)代表着凸多边形A的点的数量。<br />
+接下来n行每行包含一个坐标(x, y) (-109 ≤ x, y ≤109) 表示这个凸多边形，点按照顺时针给出。<br />
+第n + 2行，包含一个整数m (3≤ m ≤105)代表着点集B的点的数量。<br />
+接下来m行每行包含一个坐标(x, y) (-109 ≤ x, y ≤ 109) 表示这个点集B。<br />
+处理到文件结束<br />
+<strong>Output</strong><br />
+对于每组测试数据：<br />
+第1行，如果点集B都严格在凸多边形A内，输出YES，否则输出NO。<br />
+<strong>二分法</strong>求多边形的步骤：<br /></p>
+<ol>
+  <li>选择多边形其中一个点为起点，连接其它点作射线
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/Hrbust1429.png" alt="此处输入图片的描述" /></li>
+  <li>判断给定的点是否在所有射线包围的区域之内，即判断给定点是否在最左侧射线的左边，或者在最右侧射线的右边。</li>
+  <li>如果在射线包围的区域之内，选择构成最两侧的射线的点为left和right，则mid =(left+right)/2，连接给顶点和起点作射线，判断该射线在mid点和起点的哪一边，不断循环，如此用二分法最后求出给定点所在的三角形区域，由此确定了除起点外的一条边。
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/Hrbust14292.png" alt="此处输入图片的描述" /></li>
+  <li>判断给定点在这条边的左方还是右方，由此判断给定点是否在三角形区域内，也就是是否在多边形内。<br />
+　　<strong>注意</strong>：这道题有个坑，点要求严格在多边形内部，也就是说不能在多边形的边上。注意这一点，测试数据控制的很严格。</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;stdio.h&gt;
+struct Point{
+    double x,y;
+};
+//求p1p0和p2p0的叉积,如果大于0,则p1在p2的顺时针方向
+double direc(Point p1,Point p2,Point p0)    
+{
+    return (p1.x-p0.x)*(p2.y-p0.y)-(p2.x-p0.x)*(p1.y-p0.y);
+}
+Point A[100001],B[100001];
+int main()
+{
+    int i,n,m;
+    while(scanf("%d",&amp;n)!=EOF){
+        for(i=1;i&lt;=n;i++)    
+            scanf("%lf%lf",&amp;A[i].x,&amp;A[i].y);
+        scanf("%d",&amp;m);
+        for(i=1;i&lt;=m;i++)    
+            scanf("%lf%lf",&amp;B[i].x,&amp;B[i].y);
+         //二分法判断B上的点是否在原凸多边形A内，注意在边上不行
+        for(i=1;i&lt;=m;i++){
+        //在第一个点为起点的扇形之外或在边上
+            if(direc(B[i],A[2],A[1])&lt;=0 || direc(B[i],A[n],A[1])&gt;=0)    
+                break;
+            int left=2,right=n;
+            while(right-left!=1){
+                int mid = (left+right)/2;
+                if(direc(B[i],A[mid],A[1])&gt;0)
+                    left = mid;
+                else
+                    right = mid;
+            }
+            if(direc(B[i],A[right],A[left])&lt;=0)           //在边之外或在边上
+                break;
+        }
+        if(i&gt;m)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
+}
+</code></pre></div></div>
+<h3 id="hrbust1552">Hrbust1552</h3>
+<p>题目链接：http://acm.hrbust.edu.cn/index.php?m=ProblemSet&amp;a=showProblem&amp;problem_id=1552<br />
+<strong>Description</strong> <br /></p>
+
+<p>给定一个n元素的序列，其中存放的都是整数类型的数据。现在保证给出的序列中有一个数，这个数的个数超过整个序列元素总个数的一半，请你找出这个数是多少。<br /></p>
+
+<p><strong>Input</strong><br /></p>
+
+<p>输入数据第一行为一个整数T(T&lt;=15)为测试数据的组数。接下来是T组测试数据。<br /></p>
+
+<p>每组测试数据的第一行为一个整数n(1 &lt;= n &lt;= 1000000)。代表序列中元素的个数。<br /></p>
+
+<p>接下来是序列中存放的n个数值。每个数值的范围在[0,2000000]内。<br /></p>
+
+<p><strong>Output</strong><br /></p>
+
+<p>输出数量过半的那个数字。保证每组数据必有唯一的解。<br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+#include &lt;string.h&gt;
+
+using namespace std;
+int Number[1000000];
+int main()
+{
+    int i, j, k ,l ,m ,n ,T ;
+    scanf("%d", &amp;T);
+    while(T--)
+    {
+        scanf("%d", &amp;n);
+        for (i = 0; i &lt; n; ++i)
+        {
+            scanf("%d", &amp;Number[i]);
+        }
+        int left=0,right=2000000;
+        while(left&lt;right)
+        {
+            int middle=(left+right)/2 ,left_counter=0,right_counter=0;
+            for (i = 0; i &lt; n; ++i)
+            {
+                if(Number[i]&lt;=middle)
+                    left_counter++;
+                else
+                    right_counter++;
+            }
+            if(left_counter&lt;right_counter)
+                left=middle+1;
+            else
+                right=middle;
+        }
+        printf("%d\n", left);
+    }
+    
+    return 0;
+}
+</code></pre></div></div>
+
+:ET

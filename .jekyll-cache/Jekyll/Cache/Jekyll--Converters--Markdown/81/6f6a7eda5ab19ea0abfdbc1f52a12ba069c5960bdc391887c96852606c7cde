@@ -1,0 +1,110 @@
+I"�#<p>Vis.js 是一个动态的、基于浏览器的可视化库，可处理大量的动态数据并能与这些数据进行<br />交互操作。该项目是由Almende B.V公司开发的，包含 DataSet、Timeline和Graph组件。<br /><br />
+<strong>Vis.js组件介绍：</strong><br />
+数据集（DataSet）：灵活的键/值。可添加、更新和删除项目。DataSet可以过滤和订制项目，转换项目领域。<br />
+数据视图（DataView）：在DataSet过滤和/或格式化视图。<br />
+图表（Graph）：显示图形或网络。<br />
+时间轴（Timeline）：显示不同类型的时间轴上的数据。在时间轴上的时间和项可以交互移动、缩放及控制。<br /></p>
+
+<p>官方主页： http://visjs.org/
+项目文档： http://visjs.org/docs/index.html</p>
+
+<h3 id="创建一个简单的网络拓扑图">创建一个简单的网络拓扑图</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Network | Basic usage<span class="nt">&lt;/title&gt;</span>
+
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"../../dist/vis.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"../../dist/vis-network.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+    <span class="nf">#mynetwork</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+      <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="n">lightgray</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  Create a simple network with some nodes and edges.
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"mynetwork"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="c1">// create an array with nodes</span>
+  <span class="kd">var</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">vis</span><span class="p">.</span><span class="nx">DataSet</span><span class="p">([</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Node 1</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Node 2</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Node 3</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Node 4</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Node 5</span><span class="dl">'</span><span class="p">}</span>
+  <span class="p">]);</span>
+
+  <span class="c1">// create an array with edges</span>
+  <span class="kd">var</span> <span class="nx">edges</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">vis</span><span class="p">.</span><span class="nx">DataSet</span><span class="p">([</span>
+    <span class="p">{</span><span class="na">from</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">from</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">from</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">from</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">from</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">to</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+  <span class="p">]);</span>
+
+  <span class="c1">// create a network</span>
+  <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">mynetwork</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">nodes</span><span class="p">:</span> <span class="nx">nodes</span><span class="p">,</span>
+    <span class="na">edges</span><span class="p">:</span> <span class="nx">edges</span>
+  <span class="p">};</span>
+  <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="kd">var</span> <span class="nx">network</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">vis</span><span class="p">.</span><span class="nx">Network</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>官方源码效果：http://visjs.org/examples/network/basicUsage.html <br />
+完成一个最简单的网络图，需要两个资源文件</p>
+
+<ol>
+  <li>vis.js</li>
+  <li>vis-network.min.css
+demo下载地址：https://github.com/nilzxq/visjs.git <br />
+如上图所示，数据包括：nodes（节点）、edges（关系)
+初始化网络图方法：<br />
+var network = new vis.Network(container, data, options);<br />
+其中，container为容器，data为数据,options为选项<br />
+而最终展示的图片实际上是在html5的画布上的。<br /></li>
+</ol>
+
+<h3 id="模块配置">模块配置</h3>
+<p>enabled：boolean型参数，默认为true。用于切换配置界面的开关。<br />
+filter：类型可以为String、array、boolean、function。如果为boolean型，那么所有选项会<br />被显示，否则一个都不会显示。如果是一个String类型，那么可选项为nodes, edges,<br /> layout, interaction, manipulation, physics, selection,<br /> renderer。如果是一个数组，那么前面提到的字段可多选。如果是个方法，且返回true，那么<br />选项就会被展示。<br />
+container：容器<br />
+showButton:boolean型,是否显示按钮.<br /></p>
+
+<p>将options替换如下<br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var options = {
+    configure: {
+        enabled: true,
+        filter: 'physics',
+        container: undefined,
+        showButton: true
+    }
+}
+</code></pre></div></div>
+
+<p>页面中会多出如下的配置：<br /></p>
+
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/visjs.png" alt="此处输入图片的描述" /></p>
+
+<p>参考博客：http://m.blog.csdn.net/html666/article/details/74370334
+侵删<br /></p>
+
+:ET

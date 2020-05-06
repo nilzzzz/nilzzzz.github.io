@@ -1,0 +1,7 @@
+I"%<p><a href="http://acm.hrbust.edu.cn/problems">oj-acm专项分类练习</a></p>
+<h3 id="二分查找算法">二分查找算法</h3>
+<p>简单定义：在一个<font color="red">单调有序</font>的集合中查找元素，每次将集合分为左右两部分，判断解在哪个部分中并调整集合上下界，重复直到找到目标元素。<br />
+时间复杂度：O (logn)，优于直接顺序查找O(n)<br />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E4%BA%8C%E5%88%861.jpg" alt="此处输入图片的描述" /></p>
+
+:ET

@@ -1,0 +1,719 @@
+I"l<h3 id="uedit32exe-pe头分析">uedit32.exe PE头分析</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe12.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe13.png" alt="此处输入图片的描述" /></p>
+<h3 id="1dos-mz头image_dos_header64字节">1.DOS MZ头IMAGE_DOS_HEADER（64字节）</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe11.png" alt="此处输入图片的描述" />
+word：二字节 dword：四字节
+ IMAGE_DOS_HEADER STRUCT</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>成员</th>
+      <th style="text-align: right">偏移量</th>
+      <th style="text-align: right">大小</th>
+      <th style="text-align: right">值</th>
+      <th style="text-align: center">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>e_magic</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">5A4D</td>
+      <td style="text-align: center">EXE标志，”MZ”</td>
+    </tr>
+    <tr>
+      <td>e_cblp</td>
+      <td style="text-align: right">00000002</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0090</td>
+      <td style="text-align: center">最后页中的节数，为144字节</td>
+    </tr>
+    <tr>
+      <td>e_cp</td>
+      <td style="text-align: right">00000004</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0003</td>
+      <td style="text-align: center">文件中全部和部分页数，为3页</td>
+    </tr>
+    <tr>
+      <td>e_crlc</td>
+      <td style="text-align: right">00000006</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">重定位表中的指针数，0个</td>
+    </tr>
+    <tr>
+      <td>e_cparhdr</td>
+      <td style="text-align: right">00000008</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0004</td>
+      <td style="text-align: center">头部尺寸，以段落为单位，为4个段落</td>
+    </tr>
+    <tr>
+      <td>e_minalloc</td>
+      <td style="text-align: right">0000000A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">所需的最小附加段,值为10</td>
+    </tr>
+    <tr>
+      <td>e_maxalloc</td>
+      <td style="text-align: right">0000000C</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">FFFF</td>
+      <td style="text-align: center">所需的最大附加段,值为65535</td>
+    </tr>
+    <tr>
+      <td>e_ss</td>
+      <td style="text-align: right">0000000E</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">初始的ss值（相对偏移量），为0</td>
+    </tr>
+    <tr>
+      <td>e_sp</td>
+      <td style="text-align: right">00000010</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">00b8</td>
+      <td style="text-align: center">初始的sp值,为184</td>
+    </tr>
+    <tr>
+      <td>e_csum</td>
+      <td style="text-align: right">00000012</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">补码校验和，为0</td>
+    </tr>
+    <tr>
+      <td>e_ip</td>
+      <td style="text-align: right">00000014</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">初始IP值,值为0</td>
+    </tr>
+    <tr>
+      <td>e_cs</td>
+      <td style="text-align: right">00000016</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">初始的CS值,值为0</td>
+    </tr>
+    <tr>
+      <td>e_lfarlc</td>
+      <td style="text-align: right">00000018</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0040</td>
+      <td style="text-align: center">重定位表的字节偏移量,值为64</td>
+    </tr>
+    <tr>
+      <td>e_ovno</td>
+      <td style="text-align: right">0000001A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">所需的最小附加段,值为10</td>
+    </tr>
+    <tr>
+      <td>e_res<a href="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe14.png">4</a></td>
+      <td style="text-align: right">0000001c 0000001E 00000020 00000022</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000 0000 0000 0000</td>
+      <td style="text-align: center">保留字</td>
+    </tr>
+    <tr>
+      <td>e_oemid</td>
+      <td style="text-align: right">00000024</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">OEM标志符（相对e_oeminfo）,为0</td>
+    </tr>
+    <tr>
+      <td>e_oeminfo</td>
+      <td style="text-align: right">00000026</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">OEM信息，为0</td>
+    </tr>
+    <tr>
+      <td>e_res2[10]</td>
+      <td style="text-align: right">00000028 0000002A 0000002C 0000002E 00000030 00000032 00000034 00000036 00000038 0000003A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">保留字</td>
+    </tr>
+    <tr>
+      <td>e_lfanew</td>
+      <td style="text-align: right">0000003c</td>
+      <td style="text-align: right">dword</td>
+      <td style="text-align: right">00000110</td>
+      <td style="text-align: center">PE头的相对文件的偏移地址，为0x110</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>IMAGE_DOS_HEADER ENDS</p>
+
+<ul>
+  <li>dos mz头下面是DOS Stub.整个DOS
+Stub是一个字节块，其内容随着链接时使用的链接器不同而不同，PE中并没有与之对应的相关结构。
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe14.png" alt="此处输入图片的描述" /></li>
+</ul>
+
+<h3 id="2pe头标识signature4字节">2.PE头标识Signature（4字节）</h3>
+
+<p>紧跟在DOS Stub后面的是PE头标识Signature.与大部分文件格式的头部结构一样，PE头部信息中有一个四字节的标识，该标识位于指针IMAGE_DOS_HEADER.e_lfanew指向的位置。其内容固定，对应于ASCII码的字符串”PE\0\0”
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe15.png" alt="此处输入图片的描述" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>成员</th>
+      <th style="text-align: right">偏移量</th>
+      <th style="text-align: right">大小</th>
+      <th style="text-align: right">值</th>
+      <th style="text-align: center">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>signature</td>
+      <td style="text-align: right">00000110</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00004550</td>
+      <td style="text-align: center">标识对应于ASCII码”PE\0\0”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3标准pe头image_file_header20字节">3.标准PE头IMAGE_FILE_HEADER(20字节)</h3>
+
+<p>标准PE头IMAGE_FILE_HEADER紧跟在PE头标识后，即位于IMAGE_DOS_HEADER的e_lfanew值+4的位置。由此位置开始的20个字节为数据结构标准PE头IMAGE_FILE_HEADER的内容。该结构在微软的官方文档中被称为标准通用对象文件格式(Common Object File Format,COFF)头。它记录了PE文件的全部属性，如该PE文件运行的平台、PE文件类型（是EXE文件还是DLL文件）、文件中存在的节的总数等。
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe16.png" alt="此处输入图片的描述" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>成员</th>
+      <th style="text-align: right">偏移量</th>
+      <th style="text-align: right">大小</th>
+      <th style="text-align: right">值</th>
+      <th style="text-align: center">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Machine</td>
+      <td style="text-align: right">00000114</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">014c</td>
+      <td style="text-align: center">运行平台为Intel 386处理器或后续兼容处理器</td>
+    </tr>
+    <tr>
+      <td>NumberOfSections</td>
+      <td style="text-align: right">00000116</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0006</td>
+      <td style="text-align: center">PE中节的数量为6</td>
+    </tr>
+    <tr>
+      <td>TimeDateStamp</td>
+      <td style="text-align: right">00000118</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">497621B0</td>
+      <td style="text-align: center">文件创建日期与时间，<br />低32为存放的值是自1970年1月1日00:00<br />时开始到创建时间为止的总秒数</td>
+    </tr>
+    <tr>
+      <td>PointerToSymbolTable</td>
+      <td style="text-align: right">0000011C</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: center">coff符号表的文件偏移，<br />赞成在PE中使用COFF调试信息</td>
+    </tr>
+    <tr>
+      <td>NumberOfSymbols</td>
+      <td style="text-align: right">00000120</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: center">符号表中的符号数量为0（用于调试）</td>
+    </tr>
+    <tr>
+      <td>SizeOfOptionalHeader</td>
+      <td style="text-align: right">00000124</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">00E0</td>
+      <td style="text-align: center">扩展头结构的长度为3584</td>
+    </tr>
+    <tr>
+      <td>Characteristics</td>
+      <td style="text-align: right">00000126</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0103</td>
+      <td style="text-align: center">文件属性：第0,1,8位分别被设置为1，<br />IMAGE_FILE_RELOCS_STRIPPED,<br />IMGE_FILE_EXECUTABLE_IMAGE,<br />IMAGE_FILE_32BIT_MACHINE,<br />表示该文件不存在重定位信息，<br />文件是可执行的，文件只能在32位平台上运行</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>该结构常用于判断PE文件是EXE类型还是DLL类型（本pe文件第13位0，故不是DLL文件），不但可以通过该结构得到PE文件中节的总量，还可以当成对节区信息进行遍历操作的循环次数。</p>
+
+<h3 id="4扩展pe头image_optional_header32216字节">4.扩展PE头IMAGE_OPTIONAL_HEADER32(216字节)</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe17.png" alt="此处输入图片的描述" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>成员</th>
+      <th style="text-align: right">偏移量</th>
+      <th style="text-align: right">大小</th>
+      <th style="text-align: right">值</th>
+      <th style="text-align: center">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Magic</td>
+      <td style="text-align: right">00000128</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">010B</td>
+      <td style="text-align: center">魔术字，表示该文件为PE32</td>
+    </tr>
+    <tr>
+      <td>MajorLinkerVersion</td>
+      <td style="text-align: right">0000012A</td>
+      <td style="text-align: right">Byte</td>
+      <td style="text-align: right">08</td>
+      <td style="text-align: center">链接器的版本号</td>
+    </tr>
+    <tr>
+      <td>MinorLinkerVersion</td>
+      <td style="text-align: right">0000012B</td>
+      <td style="text-align: right">Byte</td>
+      <td style="text-align: right">00</td>
+      <td style="text-align: center">链接器的版本号</td>
+    </tr>
+    <tr>
+      <td>SizeOfCode</td>
+      <td style="text-align: right">0000012C</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00561000</td>
+      <td style="text-align: center">所有含代码的节的总大小为0x00561000h字节</td>
+    </tr>
+    <tr>
+      <td>SizeOfInitializedData</td>
+      <td style="text-align: right">00000130</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">0023E000</td>
+      <td style="text-align: center">运行平台为Intel 所有初始化的数据的节的总大小为0x0023E000h字节</td>
+    </tr>
+    <tr>
+      <td>SizeOfUninitializedData</td>
+      <td style="text-align: right">00000134</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: center">所有未初始化的数据的节的大小，没有未初始化的数据</td>
+    </tr>
+    <tr>
+      <td>AddressOfEntryPoint</td>
+      <td style="text-align: right">00000138</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">004916D1</td>
+      <td style="text-align: center">程序执行入口的RVA为0x004916D1h</td>
+    </tr>
+    <tr>
+      <td>BaseOfCode</td>
+      <td style="text-align: right">0000013C</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00001000</td>
+      <td style="text-align: center">代码的节起始RVA为0x1000h</td>
+    </tr>
+    <tr>
+      <td>BaseOfData</td>
+      <td style="text-align: right">00000140</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00562000</td>
+      <td style="text-align: center">数据段起始地址的RVA为0x562000h</td>
+    </tr>
+    <tr>
+      <td>ImageBase</td>
+      <td style="text-align: right">00000144</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00400000</td>
+      <td style="text-align: center">Pe映像的优先装入地址</td>
+    </tr>
+    <tr>
+      <td>SectionAlignment</td>
+      <td style="text-align: right">00000148</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00001000</td>
+      <td style="text-align: center">内存中的节对齐粒度为0x1000</td>
+    </tr>
+    <tr>
+      <td>FileAlignment</td>
+      <td style="text-align: right">0000014C</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00001000</td>
+      <td style="text-align: center">文件中的节对齐粒度为0x1000</td>
+    </tr>
+    <tr>
+      <td>MajorOperatingSystemVersion</td>
+      <td style="text-align: right">00000150</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0004</td>
+      <td style="text-align: center">操作系统的版本号</td>
+    </tr>
+    <tr>
+      <td>MinorOperatingSysyemVersion</td>
+      <td style="text-align: right">00000152</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">操作系统的版本号</td>
+    </tr>
+    <tr>
+      <td>MajorImageVersion</td>
+      <td style="text-align: right">00000154</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">PE映象的版本号</td>
+    </tr>
+    <tr>
+      <td>MinorImageVersion</td>
+      <td style="text-align: right">00000156</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">PE映象的版本号</td>
+    </tr>
+    <tr>
+      <td>MajorSubsystemVersion</td>
+      <td style="text-align: right">00000158</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0004</td>
+      <td style="text-align: center">所需子系统版本号</td>
+    </tr>
+    <tr>
+      <td>MinorSubsystemVersion</td>
+      <td style="text-align: right">0000015A</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">所需子系统版本号</td>
+    </tr>
+    <tr>
+      <td>Win32VersionValue</td>
+      <td style="text-align: right">0000015C</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: center">保留，必须为0</td>
+    </tr>
+    <tr>
+      <td>SizeOfImage</td>
+      <td style="text-align: right">00000160</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">007A0000</td>
+      <td style="text-align: center">内存中PE映象的大小为0x7A0000h字节</td>
+    </tr>
+    <tr>
+      <td>SizeOfHeaders</td>
+      <td style="text-align: right">00000164</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00001000</td>
+      <td style="text-align: center">所有文件头（包括节表）的大小为0x1000h</td>
+    </tr>
+    <tr>
+      <td>CheckSum</td>
+      <td style="text-align: right">00000168</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00752ED5</td>
+      <td style="text-align: center">映象文件的校验和</td>
+    </tr>
+    <tr>
+      <td>Subsystem</td>
+      <td style="text-align: right">0000016C</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0002</td>
+      <td style="text-align: center">运行该PE文件所需的子系统</td>
+    </tr>
+    <tr>
+      <td>DllCharacteristics</td>
+      <td style="text-align: right">0000016E</td>
+      <td style="text-align: right">word</td>
+      <td style="text-align: right">0000</td>
+      <td style="text-align: center">不是dll文件不具有dll文件属性</td>
+    </tr>
+    <tr>
+      <td>SizeOfStackReserve</td>
+      <td style="text-align: right">00000170</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00217B80</td>
+      <td style="text-align: center">初始化时为线程保留的栈大小为0x217B80字节</td>
+    </tr>
+    <tr>
+      <td>SizeOfStackCommit</td>
+      <td style="text-align: right">00000174</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00001000</td>
+      <td style="text-align: center">初始化时线程实际使用的栈大小为0x1000字节</td>
+    </tr>
+    <tr>
+      <td>SizeOfHeapReserve</td>
+      <td style="text-align: right">00000178</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00100000</td>
+      <td style="text-align: center">初始化时为进程保留的堆大小为0x100000字节</td>
+    </tr>
+    <tr>
+      <td>SizeOfHeapCommit</td>
+      <td style="text-align: right">0000017C</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00001000</td>
+      <td style="text-align: center">初始化时进程实际使用的堆大小为0x1000字节</td>
+    </tr>
+    <tr>
+      <td>LoaderFlags</td>
+      <td style="text-align: right">00000180</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00000000</td>
+      <td style="text-align: center">保留，必须为0</td>
+    </tr>
+    <tr>
+      <td>NumberOfRvaAndSizes</td>
+      <td style="text-align: right">00000184</td>
+      <td style="text-align: right">Dword</td>
+      <td style="text-align: right">00000010</td>
+      <td style="text-align: center">数据目录的项数为16项</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="5数据目录项image_data_directory">5.数据目录项IMAGE_DATA_DIRECTORY</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/reverse-pe18.png" alt="此处输入图片的描述" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>成员</th>
+      <th style="text-align: right">偏移量</th>
+      <th style="text-align: center">大小</th>
+      <th style="text-align: center">值</th>
+      <th>解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Export Directory RVA</td>
+      <td style="text-align: right">00000188</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>导出表RVA</td>
+    </tr>
+    <tr>
+      <td>Export Directory size</td>
+      <td style="text-align: right">0000018C</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>导出表大小</td>
+    </tr>
+    <tr>
+      <td>Import Directory RVA</td>
+      <td style="text-align: right">00000190</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">0064F66C</td>
+      <td>导入表RVA</td>
+    </tr>
+    <tr>
+      <td>Import Directory Size</td>
+      <td style="text-align: right">00000194</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">000001A4</td>
+      <td>导入表大小</td>
+    </tr>
+    <tr>
+      <td>Resource Directory RVA</td>
+      <td style="text-align: right">00000198</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00790000</td>
+      <td>资源表RVA</td>
+    </tr>
+    <tr>
+      <td>Resource Directory Size</td>
+      <td style="text-align: right">0000019C</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">0000F208</td>
+      <td>资源表大小</td>
+    </tr>
+    <tr>
+      <td>Exception Directory RVA</td>
+      <td style="text-align: right">000001A0</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>异常表RVA</td>
+    </tr>
+    <tr>
+      <td>Exception Directory Size</td>
+      <td style="text-align: right">000001A4</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>异常表大小</td>
+    </tr>
+    <tr>
+      <td>Security Directory RVA</td>
+      <td style="text-align: right">000001A8</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">0074D000</td>
+      <td>安全表RVA</td>
+    </tr>
+    <tr>
+      <td>Security Directory Size</td>
+      <td style="text-align: right">000001AC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00001510</td>
+      <td>安全表大小</td>
+    </tr>
+    <tr>
+      <td>Relocation Directory RVA</td>
+      <td style="text-align: right">000001B0</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>重定位表RVA</td>
+    </tr>
+    <tr>
+      <td>Relocation Directory Size</td>
+      <td style="text-align: right">000001B4</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>重定位表大小</td>
+    </tr>
+    <tr>
+      <td>Debug Directory RVA</td>
+      <td style="text-align: right">000001B8</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">005631E0</td>
+      <td>调试表RVA</td>
+    </tr>
+    <tr>
+      <td>Debug Directory Size</td>
+      <td style="text-align: right">000001BC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">0000001C</td>
+      <td>调试表大小</td>
+    </tr>
+    <tr>
+      <td>Architecture Directory RVA</td>
+      <td style="text-align: right">000001C0</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>版权表RVA</td>
+    </tr>
+    <tr>
+      <td>Architecture Directory Size</td>
+      <td style="text-align: right">000001C4</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>版权表大小</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td style="text-align: right">000001C8</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>全局指针表RVA</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td style="text-align: right">000001CC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>全局指针表大小</td>
+    </tr>
+    <tr>
+      <td>TLS Directory RVA</td>
+      <td style="text-align: right">000001D0</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">005D755C</td>
+      <td>线程本地存储RVA</td>
+    </tr>
+    <tr>
+      <td>TLS Directory Size</td>
+      <td style="text-align: right">000001D4</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000018</td>
+      <td>线程本地存储大小</td>
+    </tr>
+    <tr>
+      <td>Configuration Directory RVA</td>
+      <td style="text-align: right">000001D8</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>加载配置表RVA</td>
+    </tr>
+    <tr>
+      <td>Configuration Directory Size</td>
+      <td style="text-align: right">000001DC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>加载配置表大小</td>
+    </tr>
+    <tr>
+      <td>Bound Import Directory RVA</td>
+      <td style="text-align: right">000001E0</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>綁定导入表RVA</td>
+    </tr>
+    <tr>
+      <td>Bound Import Directory Size</td>
+      <td style="text-align: right">000001E4</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>绑定导入表大小</td>
+    </tr>
+    <tr>
+      <td>Import Address Table Directory RVA</td>
+      <td style="text-align: right">000001EC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00562000</td>
+      <td>IAT表RVA</td>
+    </tr>
+    <tr>
+      <td>Import Address Table Directory Size</td>
+      <td style="text-align: right">000001EC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000DDC</td>
+      <td>IAT表大小</td>
+    </tr>
+    <tr>
+      <td>Delay Import Directory RVA</td>
+      <td style="text-align: right">000001F0</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">0064F5BC</td>
+      <td>延迟导入表RVA</td>
+    </tr>
+    <tr>
+      <td>Delay Import Directory Size</td>
+      <td style="text-align: right">000001F4</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000040</td>
+      <td>延迟导入表大小</td>
+    </tr>
+    <tr>
+      <td>.NET MetaData Directory RVA</td>
+      <td style="text-align: right">000001F8</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>.NET MetaData表RVA</td>
+    </tr>
+    <tr>
+      <td>.NET MetaData Directory Size</td>
+      <td style="text-align: right">000001FC</td>
+      <td style="text-align: center">Dword</td>
+      <td style="text-align: center">00000000</td>
+      <td>.NET MetaData表大小</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="巴拉巴拉">巴拉巴拉</h3>
+<p>发博遇见一个小bug，求教大神，大神分分钟搞定，不秒秒钟，感谢感谢，膜拜膜拜！！！！
+这个行业真的闪闪惹人爱！！！考期了，加油干QoQ</p>
+<p>只有自己去体会写博客才能切身感受到这些热爱分享的人的高贵品质！！！大爱大爱！</p>
+
+:ET

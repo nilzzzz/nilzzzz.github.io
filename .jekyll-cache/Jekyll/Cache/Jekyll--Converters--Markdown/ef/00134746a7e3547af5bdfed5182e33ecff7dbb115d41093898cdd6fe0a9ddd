@@ -1,0 +1,34 @@
+I"M<h3 id="1adv-150-周期字串">1.ADV-150 周期字串</h3>
+<p>时间限制：1.0s        内存限制：256.0MB
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%91%A8%E6%9C%9F%E5%AD%97%E4%B8%B2.png" alt="此处输入图片的描述" />
+```
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+	string str,s1,s2,ans;
+	int result;
+	while(cin&gt;&gt;str){
+		int len=str.length();
+		ans=str;
+		for(int i=1;i&lt;=len;i++){
+			if(len%i!=0)
+				continue;
+			s1=str.substr(0,i);//获得字符串str中 从第0位开始的长度为i的字符串,默认时的长度为从开始位置到尾
+			int flag=1;
+			for(int j=i;j&lt;len;j+=i){
+				s2=str.substr(j,i);
+				if(s1!=s2){
+					flag=0;break;
+				}
+			}
+			if(flag){
+				result=i;break;
+			}
+		}
+		cout&lt;&lt;result&lt;&lt;endl;
+	}
+	return 0;
+}</string></iostream></p>
+
+:ET

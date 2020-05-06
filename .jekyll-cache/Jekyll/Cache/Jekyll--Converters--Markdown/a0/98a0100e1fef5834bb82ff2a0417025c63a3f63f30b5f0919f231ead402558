@@ -1,0 +1,54 @@
+I"�<h3 id="arts">ARTS</h3>
+
+<ol>
+  <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
+  <li>Review：阅读并点评至少一篇英文技术文章</li>
+  <li>Tip：学习至少一个技术技巧</li>
+  <li>Share：分享一篇有观点和思考的技术文章</li>
+</ol>
+
+<h3 id="algorithm">Algorithm</h3>
+<p>二叉树的相关算法<br />
+https://github.com/nilzxq/suanfa/tree/master/bin/chapter_3_binarytreeproblem</p>
+
+<h3 id="review">Review</h3>
+<p><strong>VulDeePecker A Deep Learning-Based System for Vulnerability Detection</strong></p>
+
+<blockquote>
+  <p>Vulnerability Deep Pecker (VulDeePecker): A deep learning-based system for automatically
+detecting vulnerabilities in programs (source code)</p>
+</blockquote>
+
+<p><strong>Limitations and Open Problems</strong>
+Present design</p>
+
+<blockquote>
+  <ol>
+    <li>Assuming source code is available</li>
+    <li>Only dealing with C/C++ programs</li>
+    <li>Only dealing with vulnerabilities related to library/API function calls</li>
+    <li>Only accommodating data-flow information, but not control-flow information</li>
+    <li>Using some heuristics</li>
+  </ol>
+</blockquote>
+
+<p>Present implementation</p>
+
+<blockquote>
+  <p>Limit to the BLSTM neural network</p>
+</blockquote>
+
+<p>Present evaluation</p>
+
+<blockquote>
+  <p>The dataset only contains vulnerabilities about buffer errors and
+resource management errors</p>
+</blockquote>
+
+<h3 id="tip--share">Tip &amp; Share</h3>
+<p>分享深度学习的一些技术博客<br />
+李沐开源作品一起来《动手学深度学习》<br />
+https://mp.weixin.qq.com/s/_e5T-g7HXucB0t2yWHDjqg <br />
+推荐的原因是有开源的在线内容分享，有代码有视频有文本~</p>
+
+:ET

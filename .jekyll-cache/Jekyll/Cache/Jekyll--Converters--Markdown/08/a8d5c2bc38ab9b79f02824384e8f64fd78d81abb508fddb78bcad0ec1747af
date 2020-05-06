@@ -1,0 +1,53 @@
+I"�
+<h3 id="案例描述">案例描述</h3>
+<blockquote>
+  <p>近期，在POST数据是，用UrlEncodedFormEntity()这个方法传给后台，后台报错，说是无法解析json内容，不是以{开头。</p>
+
+  <p>检查发现用UrlEncodedFormEntity()方法组织的数据发送到服务器是普通的键值对，不是json，所以后台无法接受。
+后来改用 StringEntity()方法组织数据，数据的形式就非常自由了，可以组织成自己想要的任何形式，问题解决。</p>
+</blockquote>
+
+<h3 id="stringentity-urlencodedformentity-multipartentity-的区别">StringEntity， UrlEncodedFormEntity() ，MultipartEntity 的区别</h3>
+
+<blockquote>
+  <p><strong>UrlEncodeFormEntity</strong>会将参数以key1=value1&amp;key2=value2的键值对形式发出。类似于传统的application/x-www-form-urlencoded表单上传</p>
+
+  <p><strong>StringEntity</strong>可以自己指定ContentType，而默认值是
+text/plain，数据的形式就非常自由了，可以组织成自己想要的任何形式，一般用来存储json数据</p>
+
+  <p><strong>MultipartEntity</strong>文件上传用到，类似于表单的类型为multipart/form-data</p>
+</blockquote>
+
+<h3 id="三种方法的使用">三种方法的使用</h3>
+<ol>
+  <li>UrlEncodedFormEntity
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> List&lt;NameValuePair&gt; pairs = new ArrayList&lt;NameValuePair&gt;(); 
+ pairs.add(new BasicNameValuePair("key", "value"));                      
+ httpPost.setEntity(new UrlEncodedFormEntity(pairs, HTTP.UTF_8)); 
+</code></pre></div>    </div>
+  </li>
+  <li>StringEntity
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> JSONObject json = new JSONObject();  
+ json.put("key", "value");                        
+ httpPost.setEntity(new StringEntity(json.toString(), HTTP.UTF_8)); 
+</code></pre></div>    </div>
+  </li>
+  <li>MultipartEntity
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ MultipartEntity entity = new MultipartEntity();
+  /* 上传文本，后边new StringBody(text,Charset.forName(CHARSET))为参数值，其实就是正常的值转换成utf-8的编码格式  */
+ entity.addPart("key",new StringBody(text, Charset.forName("UTF-8")));
+ // 上传音频文件  
+ entity.addPart("audio", new FileBody(new File("path"), "audio/*"));  
+ // 上传图片  
+ entity.addPart("fileimg", new FileBody(new File("path"), "image/*"));
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="巴拉巴拉">巴拉巴拉</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Maturity is when you stop complaining and making excuses,and start making changes."
+</code></pre></div></div>
+
+:ET

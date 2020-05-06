@@ -1,0 +1,44 @@
+I"<p>一个栈依次压入1,2,3,4,5那么从栈顶到栈底分别为5,4,3,2,1。将这个栈转置<br />后，从栈顶到栈底为1,2,3,4,5，也就是实现了栈中元素的逆序，<br />请设计一个算法实现逆序栈的操作，但是只能用<br />递归函数来实现，而不能用另外的数据结构。<br />
+给定一个栈Stack以及栈的大小top，请返回逆序后的栈。<br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.util.Stack;
+public class Problem_01_ReverseStackUsingRecursive {
+
+	public static void reverse(Stack&lt;Integer&gt; stack) {
+		if (stack.isEmpty()) {
+			return;
+		}
+		int i = getAndRemoveLastElement(stack);
+		reverse(stack);
+		stack.push(i);
+	}
+
+	public static int getAndRemoveLastElement(Stack&lt;Integer&gt; stack) {
+		int result = stack.pop();
+		if (stack.isEmpty()) {
+			return result;
+		} else {
+			int last = getAndRemoveLastElement(stack);
+			stack.push(result);
+			return last;
+		}
+	}
+
+	public static void main(String[] args) {
+		Stack&lt;Integer&gt; test = new Stack&lt;Integer&gt;();
+		test.push(1);
+		test.push(2);
+		test.push(3);
+		test.push(4);
+		test.push(5);
+		reverse(test);
+		while (!test.isEmpty()) {
+			System.out.println(test.pop());
+		}
+
+	}
+
+}
+</code></pre></div></div>
+
+:ET

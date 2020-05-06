@@ -1,0 +1,7 @@
+I"�<h3 id="http基本">HTTP基本</h3>
+<p>我们经常会遇到页面被运营商插入小广告这种事情（数据被篡改），可想而知，HTTP是有多么不安全。<br />
+<strong>如何做到的？</strong><br />
+<strong>答</strong>：<font color="green">只需要设定相应的DNS，做一个中间人攻击，再将修改后的数据返回。</font><br />
+<strong>那么</strong>：解决上面问题需要考虑哪些因素：<br /></p>
+<h4 id="http安全需求">http安全需求</h4>
+:ET

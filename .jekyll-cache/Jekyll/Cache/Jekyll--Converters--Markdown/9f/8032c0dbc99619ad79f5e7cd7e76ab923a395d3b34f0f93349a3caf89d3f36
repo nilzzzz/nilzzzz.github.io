@@ -1,0 +1,92 @@
+I"{<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th style="text-align: right">操作</th>
+      <th style="text-align: center">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>加载与存储</td>
+      <td style="text-align: right">LOAD</td>
+      <td style="text-align: center">将数据从文件系统或其他存储中加载数据，存入关系</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">STORE</td>
+      <td style="text-align: center">将一个关系存放到文件系统或其他存储中</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">DUMP</td>
+      <td style="text-align: center">将关系打印到控制台</td>
+    </tr>
+    <tr>
+      <td>过滤</td>
+      <td style="text-align: right">FILTER</td>
+      <td style="text-align: center">从关系中删除不需要的行</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">DISTINCT</td>
+      <td style="text-align: center">从关系中删除重复的行</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">FOREACH…GENERATE</td>
+      <td style="text-align: center">在关系中增加或者删除字段</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">STREAM</td>
+      <td style="text-align: center">使用外部程序对关系进行变换</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">SAMPLE</td>
+      <td style="text-align: center">从关系中随机取样</td>
+    </tr>
+    <tr>
+      <td>分组与连接</td>
+      <td style="text-align: right">JOIN</td>
+      <td style="text-align: center">连接两个或多个关系</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">COGROUP</td>
+      <td style="text-align: center">在两个或更多关系中对数据进行分组</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">GROUP</td>
+      <td style="text-align: center">在一个关系中对数据进行分组</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">CROSS</td>
+      <td style="text-align: center">获取两个或更多关系的乘积（叉乘）</td>
+    </tr>
+    <tr>
+      <td>排序</td>
+      <td style="text-align: right">ORDER</td>
+      <td style="text-align: center">根据一个或多个字段对某个关系进行排序</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">LIMIT</td>
+      <td style="text-align: center">将关系的元祖个数限定在一定数量内</td>
+    </tr>
+    <tr>
+      <td>合并与分割</td>
+      <td style="text-align: right">UNION</td>
+      <td style="text-align: center">合并两个或多个关系</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="text-align: right">SPLIT</td>
+      <td style="text-align: center">把某个关系切分两个或多个关系</td>
+    </tr>
+  </tbody>
+</table>
+:ET

@@ -1,0 +1,38 @@
+I"`<p>本博客根据清华大学公开课：<a href="http://open.163.com/special/cuvocw/lixingshijiao.html">清华大学公开课：数学模型-现实世界的理性视角</a>整理得到</p>
+
+<h3 id="数学建模实例1包饺子">数学建模实例1–包饺子</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%8C%85%E9%A5%BA%E5%AD%901.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%8C%85%E9%A5%BA%E5%AD%902.png" alt="此处输入图片的描述" /></p>
+
+<h4 id="另外一种思路">另外一种思路</h4>
+<font color="red">“比表面积”（单位质量所需面积大小）</font>
+<p>就整体讲，皮没变，馅增多，比表面积变小。需要证明的是，少包几个（每个馅多些）对应的比表面积小，与整体对应，而多包则大。老师定量计算的也是这个意思，比较相同面在不同个数下哪个体积大，大的就馅多符合题意，比表面积小。
+####小结
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E5%8C%85%E9%A5%BA%E5%AD%903.png" alt="此处输入图片的描述" />
+<strong>举例：</strong>要包装相同体积的商品，采用大包装比小包装更节省包装材料，从而降低包装成本</p>
+
+<h3 id="数学建模实例2公路上的汽车">数学建模实例2–公路上的汽车</h3>
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%B1%BD%E8%BD%A61.png" alt="此处输入图片的描述" />
+这个问题可以用物理知识解决
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%B1%BD%E8%BD%A62.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%B1%BD%E8%BD%A63.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%B1%BD%E8%BD%A64.png" alt="此处输入图片的描述" /></p>
+
+<ol>
+  <li>间距</li>
+  <li>路障的高度（重力，车的弹性力，惯性力等等）利用牛顿第二定律求解</li>
+  <li>横截面的形状：正弦曲线
+    <h3 id="什么是数学建模">什么是数学建模</h3>
+    <p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A11.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A12.png" alt="此处输入图片的描述" />
+资料整理：<a href="https://www.zhihu.com/question/19714813">知乎:如何入门参与数学建模？</a>
+<strong>实际问题与数学之间的桥梁=数学建模；</strong><br />
+<strong>解决过程</strong>：实际问题转化为数学问题，数学问题解答，数学问题回归实际问题。<br /></p>
+    <h3 id="ps">ps:</h3>
+    <p>最近总是练车，好忙，时间不够用啊。大三才想着去参加建模，一言难尽，在网上找了一堆资料，有需要私，百度云分享怕被和谐
+pps:数理化真真对于理科生很重要~~~~</p>
+  </li>
+</ol>
+
+:ET

@@ -1,0 +1,4 @@
+I")<p>之前个人博客搭建完成之后，一直想要用<strong>多说</strong>添加评论系统，但是多说在六月一要停止使用就没管了，<br />
+一直用<strong>disqus</strong>，国外比较火的评论系统，但是国内被强~<br /> <strong>畅言</strong>，sohu旗下的，但是个人博客备案才能使用，<br />但github pages备案个人感觉略难，就不了了之；<br />然后今天无意翻看别人的blog发现<strong>来必力</strong>，但是来自韩国（本来想说棒子国的，萨德没完事儿），拒绝使用。<br />
+综上，国内比较主流的评论系统，后面发现了<strong>gitment</strong>，一款由国内大神imsun开发的基于github issues的评论系统，具体介绍请前往项目主页（github.com/imsun/gitment）.<br /></p>
+:ET

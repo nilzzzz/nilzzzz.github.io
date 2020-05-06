@@ -1,0 +1,164 @@
+I"�<h3 id="热部署的使用场景">热部署的使用场景</h3>
+<p>1.本地调试<br />
+2.线上发布</p>
+
+<p><strong>思考：</strong><br />
+一些网站或者服务，<font color="red">全年不间断运行</font>，即使重新发布程序后也不需要重启服务，他们是怎么做到的呢？<br />
+<strong>优点：</strong><br /></p>
+
+<ol>
+  <li>无论本地还是线上，都适用</li>
+  <li>无需重启服务器<br />
+-提高开发、调试效率<br />
+-提升发布、运维效率，降低运维成本<br /></li>
+</ol>
+
+<h3 id="热部署与热加载的关系">热部署与热加载的关系</h3>
+<p><strong>Java热部署与热加载联系</strong><br /></p>
+
+<ol>
+  <li>不重启服务器编译/部署项目</li>
+  <li>基于Java的类加载器实现</li>
+</ol>
+
+<h3 id="热部署与热加载的区别">热部署与热加载的区别</h3>
+<p><strong>部署方式:</strong> <br />
+1.热部署在服务器运行是重新部署项目<br />
+2.热加载在运行时重新加载class</p>
+
+<p><strong>实现原理：</strong> <br /></p>
+
+<ol>
+  <li>热部署直接重新加载整个应用 <br />
+ 释放内存，浪费时间<br /></li>
+  <li>热加载在运行是重新加载class 定时检测class的时间戳变换<br /></li>
+</ol>
+
+<p><strong>使用场景：</strong><br /></p>
+
+<ol>
+  <li>热部署更多的是在生产环境使用</li>
+  <li>热加载则更多的是在开发环境使用
+热加载直接修改Java虚拟机中的字节码文件，难以监控和控制<br />
+热加载有个通俗的名字就是开发者模式<br /></li>
+</ol>
+
+<h3 id="热部署原理解析">热部署原理解析</h3>
+<p><strong>Java类的加载过程</strong><br />
+初始化JVM -&gt; 产生启动类加载器 -&gt; (子类，自动加载)标准扩展类加载器-&gt;(子类，自动加载)系统类加载器-&gt;加载class文件(交给其父类加载)
+<strong>类加载的五个阶段</strong><br />
+加载-&gt;验证-&gt;准备-&gt;解析-&gt;初始化
+<strong>Java类加载器特点</strong><br /></p>
+
+<ol>
+  <li>由AppClass Loader（系统类加载器）开始加载指定的类</li>
+  <li>类加载器将加载任务交给其父，如果其父找不到，再由自己去加载</li>
+  <li>Bootstrap Loader（启动类加载器）是最顶级的类加载器</li>
+</ol>
+
+<p><strong>Java类的热部署：</strong><br /></p>
+
+<p>1.<font color="red"> 类的热加载</font></p>
+<ol>
+  <li>配置Tomcat</li>
+</ol>
+
+<p><strong>通过类的热加载实现热部署</strong><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+protected Class&lt;?&gt; findClass(String name)throws ClassNotFoundException{
+System.out.println("加载类==="+name);
+byte[] data=loadClassData(name);
+return this.defineClass(name,data,0,data.length);
+}
+</code></pre></div></div>
+
+<p><strong>通过配置Tomcat实现热部署</strong><br /></p>
+
+<ol>
+  <li>直接把项目web文件夹放在webapps里</li>
+  <li>在tomcat\conf\server.xml中的<host></host>内部添加<context></context>标签</li>
+  <li>在%tomcat_home%\conf\Catalina\localhost中添加一个XML
+ （服务器会使用xml的名字作为path路径）</li>
+</ol>
+
+<h3 id="java类热加载案例分析">Java类热加载案例分析</h3>
+<p>写一个Java类热加载的实际案例
+要求：</p>
+
+<ol>
+  <li>类层次结构清晰、修改某一个Java类文件不需要重启服务或者重新编译运行程序</li>
+  <li>可适当的运用一些设计模式使代码结构更加清晰明了，比如工厂模式等。</li>
+</ol>
+
+<p>实例源码：https://github.com/nilzxq/classLoader.git</p>
+<h3 id="spring-boot项目搭建">Spring Boot项目搭建</h3>
+<p>环境准备：<br />
+下载spring-tool-suite http://spring.io/tools/<br />
+安装spring-tool-suite<br />
+解压后直接运行</p>
+
+<p>搭建项目：<br />
+file-&gt;new-&gt;spring starter project
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-1.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-2.png" alt="此处输入图片的描述" /></p>
+<h3 id="spring-boot热部署的实现">Spring Boot热部署的实现</h3>
+<p><strong>源码：https://github.com/nilzxq/HotDeploy</strong><br />
+两种实现方式：<br />
+使用Spring Loaded<br /></p>
+
+<p>使用spring-boot-devtools<br /></p>
+
+<p><strong>使用Spring Loaded热部署实现</strong><br /></p>
+<ol>
+  <li>
+    <p>Maven启动方式 在pom.xml添加依赖</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- https://mvnrepository.com/artifact/org.springframework/springloaded --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;springloaded&lt;/artifactId&gt;
+    &lt;version&gt;1.2.6.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>在控制台启动spring-boot（进入项目目录）,输入命令：<strong>mvn spring-boot:run</strong>
+ <img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-3.png" alt="此处输入图片的描述" /></p>
+<ol>
+  <li>run as-Java application <br />
+ -javaagent:[jar包本地路径] -noverify
+ <img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-4.png" alt="此处输入图片的描述" /></li>
+</ol>
+
+<p><strong>使用spring-boot-devtools热部署实现</strong>
+pom.xml直接添加依赖：<br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;dependency&gt;
+		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+		&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+		&lt;optional&gt;true&lt;/optional&gt;
+   &lt;/dependency&gt;
+</code></pre></div></div>
+
+<h3 id="spring-boot发布方式">Spring Boot发布方式</h3>
+<p>教程：https://www.imooc.com/video/16072<br />
+  发布方式：<br /></p>
+<ol>
+  <li>
+    <p>构建Jar包，命令行运行SpringBoot程序
+ <img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-5.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-6.png" alt="此处输入图片的描述" /></p>
+  </li>
+  <li>
+    <p>构建War包，发布到Tomcat
+ <img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-8.png" alt="此处输入图片的描述" />
+把war包拷贝到tomcat的webapps的目录下，启动tomcat后会解压出文件夹，注意路径变换
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-10.png" alt="此处输入图片的描述" />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/spring-tool-11.png" alt="此处输入图片的描述" />
+  项目中出现红×，在项目目录右键Maven-&gt;Update Project</p>
+  </li>
+</ol>
+
+:ET

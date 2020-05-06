@@ -1,0 +1,7 @@
+I"�<p>Vis.js 是一个动态的、基于浏览器的可视化库，可处理大量的动态数据并能与这些数据进行<br />交互操作。该项目是由Almende B.V公司开发的，包含 DataSet、Timeline和Graph组件。<br /><br />
+<strong>Vis.js组件介绍：</strong><br />
+数据集（DataSet）：灵活的键/值。可添加、更新和删除项目。DataSet可以过滤和订制项目，转换项目领域。<br />
+数据视图（DataView）：在DataSet过滤和/或格式化视图。<br />
+图表（Graph）：显示图形或网络。<br />
+时间轴（Timeline）：显示不同类型的时间轴上的数据。在时间轴上的时间和项可以交互移动、缩放及控制。<br /></p>
+:ET

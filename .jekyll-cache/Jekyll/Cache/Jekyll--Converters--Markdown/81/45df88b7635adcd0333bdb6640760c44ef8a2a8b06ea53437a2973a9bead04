@@ -1,0 +1,3 @@
+I"L<p>Q：<strong>我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡，会执行几次事件，会先执行冒泡还是捕获？</strong><br />
+<strong>addEventListener()</strong> 方法用于向指定元素添加事件句柄。<br />element.addEventListener(event, function, useCapture)，<br /></p>
+:ET

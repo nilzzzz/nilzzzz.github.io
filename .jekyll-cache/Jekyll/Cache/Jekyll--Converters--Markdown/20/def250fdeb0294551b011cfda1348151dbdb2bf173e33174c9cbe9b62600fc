@@ -1,0 +1,139 @@
+I"D<p>　　经过各种找资料，踩过各种坑，终于使用 hexo 搭建<a href="https://nilzxq.github.io">个人博客</a>初步完成了（目前不再使用），域名目前用得时 github 的  如果你已经搭建完成了，可以看看我的另一篇博客<a href="http://nilzzzz.github.io/2017/03/HEXO_Advanced/">HEXO进阶</a>，有讲如何能百度搜索你的博客、多台电脑使用HEXO发布博客等。我现在的博客是使用 Jekyll 搭建的，如果你想使用我现在的模板请看<a href="http://nilzzzz.github.io/2017/03/jekyll_tutorials1/">Windows下使用Jekyll搭建个人博客</a></p>
+
+<h2 id="正文">正文：</h2>
+<p>　这边教程是针对windows的，最近看到一些大神们的博客，都是用hexo写得，我也学着样儿搭建了一个，以下是搭建步骤。</p>
+
+<h2 id="配置环境">配置环境</h2>
+
+<h3 id="安装node">安装Node</h3>
+
+<p>作用：用来生成静态页面的
+到Node.js<a href="https://nodejs.org/">官网</a>下载相应平台的最新版本，一路安装即可。</p>
+
+<h3 id="安装git">安装Git</h3>
+<p>作用：把本地的hexo内容提交到github上去.
+安装Xcode就自带有Git，我就不多说了。</p>
+
+<h3 id="申请github">申请GitHub</h3>
+<p>作用：是用来做博客的远程创库、域名、服务器之类的。
+<a href="https://github.com/">github</a>没有账号的话直接申请就行了，怎么配置的网上有很多教程，自行百度一下。</p>
+
+<h3 id="正式安装hexo">正式安装HEXO　</h3>
+<p>Node和Git都安装好后，右键选择git bash，可执行如下命令安装hexo：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$ npm install -g hexo-cli
+</code></pre></div></div>
+<h3 id="初始化">初始化</h3>
+<p>创建一个文件夹，如：Blog，cd到Blog里执行hexo init的。命令：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$hexo init
+</code></pre></div></div>
+<p>好啦，至此，全部安装工作已经完成！</p>
+
+<h3 id="生成静态页面">生成静态页面</h3>
+<p>继续再Blog目录下执行如下命令，生成静态页面</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$hexo generate （hexo g  也可以）   
+</code></pre></div></div>
+<h3 id="本地启动">本地启动</h3>
+<p>启动本地服务，进行文章预览调试，命令：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$hexo server   （或hexo s）
+</code></pre></div></div>
+<p>浏览器输入<a href="就可以看到最原始的效果了">http://localhost:4000</a></p>
+
+<h2 id="配置github">配置Github</h2>
+
+<h3 id="建立repository">建立Repository</h3>
+
+<p>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】，固定写法
+然后建立关联，我的Blog在本地/Users/leopard/Blog，Blog是我之前建的东西也全在这里面，有：</p>
+
+<blockquote>
+  <p>Blog      <br />
+　｜      <br />
+　｜－－ _config.yml     <br />
+　｜－－ node_modules    <br />
+　｜－－ public              <br />
+　｜－－ source                                                <br />
+　｜－－ db.json	        <br />
+　｜－－ package.json        <br />
+　｜－－ scaffolds        <br />
+　｜－－ themes          　　　　　
+　　　</p>
+</blockquote>
+
+<p>现在我们需要_config.yml文件，来建立关联，命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim _config.yml
+</code></pre></div></div>
+
+<p>翻到最下面，改成我这样子的，注意： <code class="highlighter-rouge">: 后面要有空格</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deploy:
+  type: git
+  repository: https://github.com/nilzxq/nilzxq.github.io.git
+  branch: master
+</code></pre></div></div>
+<p>执行如下命令才能使用git部署</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install hexo-deployer-git --save
+</code></pre></div></div>
+
+<p>然后，执行配置命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hexo deploy
+</code></pre></div></div>
+
+<p>　然后再浏览器中输入<a href="https://nilzxq.github.io/">https://nilzxq.github.io/</a>就行了，我的 github 的账户叫 nilzxq ,把这个改成你 nilzxq 的账户名就行了</p>
+
+<h3 id="部署步骤">部署步骤</h3>
+
+<p>每次部署的步骤，可按以下三步来进行。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hexo clean
+hexo generate
+hexo deploy
+</code></pre></div></div>
+
+<p>一些常用命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hexo new "postName" #新建文章
+hexo new page "pageName" #新建页面
+hexo generate #生成静态页面至public目录
+hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
+hexo deploy #将.deploy目录部署到GitHub
+hexo help  #查看帮助
+hexo version  #查看Hexo的版本
+</code></pre></div></div>
+
+<p>这里有大量的<a href="https://github.com/hexojs/hexo/wiki/Themes">主题列表</a>使用方法里面
+都有详细的介绍，我就不多说了。    <br />
+这里有几款开源的主题   <br />
+　<a href="https://github.com/daisygao/hexo-themes-cover">Cover</a> - A chic theme with facebook-like cover photo    <br />
+　<a href="https://github.com/henryhuang/oishi">Oishi</a> - A white theme based on Landscape plus and Writing.    <br />
+　<a href="https://github.com/hardywu/hexo-theme-sidebar">Sidebar</a> - Another theme based on Light with a simple sidebar  <br />
+　<a href="https://github.com/SuperKieran/TKL">TKL</a> - A responsive design theme for Hexo. 一个设计优雅的响应式主题  <br />
+　<a href="https://github.com/levonlin/Tinnypp">Tinnypp</a> - A clean, simple theme based on Tinny   <br />
+　<a href="https://github.com/yunlzheng/hexo-themes-writing">Writing</a> - A small and simple hexo theme based on Light   <br />
+　<a href="https://github.com/litten/hexo-theme-yilia">Yilia</a> - Responsive and simple style 优雅简洁响应式主题，我用得就是这个。
+　<a href="https://github.com/Voidly/pacman">Pacman voidy</a> - A theme with dynamic tagcloud and dynamic snow</p>
+
+<h3 id="一些基本路径">一些基本路径</h3>
+<p>　文章在 source/_posts，编辑器可以用 Sublime，支持 markdown 语法。如果想修改头像可以直接在主题的 _config.yml 文件里面修改，友情链接，之类的都在这里，修改名字在 public/index.html 里修改，开始打理你的博客吧。</p>
+
+<p>Markdown语法参考链接: <a href="https://www.zybuluo.com/mdeditor">作业部落</a></p>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<blockquote>
+  <p>问：如何让文章想只显示一部分和一个 <code class="highlighter-rouge">阅读全文</code> 的按钮？     <br />
+答：在文章中加一个 <code class="highlighter-rouge">&lt;!--more--&gt;</code> ， <code class="highlighter-rouge">&lt;!--more--&gt;</code> 后面的内容就不会显示出来了。</p>
+</blockquote>
+
+<p> </p>
+
+<blockquote>
+  <p>问：本地部署成功了，也能预览效果，但使用 username.github.io 访问，<code class="highlighter-rouge">出现 404 </code> .    <br />
+答：首先确认 hexo d 命令执行是否报错，如果没有报错，再查看一下你的 github 的 username.github.io 仓库，你的博客是否已经成功提交了，你的 github 邮箱也要通过验证才行。</p>
+</blockquote>
+
+<p> </p>
+
+<p><a href="http://leopardpan.github.io">参考博客</a> 感谢大神</p>
+:ET

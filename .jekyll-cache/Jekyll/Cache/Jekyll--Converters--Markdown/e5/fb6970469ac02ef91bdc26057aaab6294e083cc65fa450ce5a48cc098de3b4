@@ -1,0 +1,54 @@
+I"]<p>之前个人博客搭建完成之后，一直想要用<strong>多说</strong>添加评论系统，但是多说在六月一要停止使用就没管了，<br />
+一直用<strong>disqus</strong>，国外比较火的评论系统，但是国内被强~<br /> <strong>畅言</strong>，sohu旗下的，但是个人博客备案才能使用，<br />但github pages备案个人感觉略难，就不了了之；<br />然后今天无意翻看别人的blog发现<strong>来必力</strong>，但是来自韩国（本来想说棒子国的，萨德没完事儿），拒绝使用。<br />
+综上，国内比较主流的评论系统，后面发现了<strong>gitment</strong>，一款由国内大神imsun开发的基于github issues的评论系统，具体介绍请前往项目主页（github.com/imsun/gitment）.<br /></p>
+
+<h3 id="1申请一个github-oauth-application">1.申请一个Github OAuth Application</h3>
+<p>Github头像下拉菜单 &gt; Settings &gt; 左边Developer settings下的OAuth Application &gt; Register a new application，填写相关信息：<br />
+<img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/comment-blog.png" alt="此处输入图片的描述" /></p>
+
+<ol>
+  <li>Application name, Homepage URL, Application description 都可以随意填写</li>
+  <li>Authorization callback URL 一定要写自己Github Pages的URL</li>
+  <li>填写完上述信息后按Register application按钮，得到Client ID和Client Secret</li>
+</ol>
+
+<h3 id="2在jekyll博客调用gitment">2.在jekyll博客调用gitment</h3>
+<p>如gitment项目页Readme所示，在你需要添加评论系统的地方，一般是_layout/目录下的 post.html, 添加一下代码</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="gitmentContainer"&gt;&lt;/div&gt;
+&lt;link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"&gt;
+&lt;script src="https://imsun.github.io/gitment/dist/gitment.browser.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+var gitment = new Gitment({
+    owner: 'Your GitHub username', //比如我的叫nilzzzz
+    repo: 'The repo to store comments', //比如我的叫nilzzzz.github.io
+    oauth: {
+        client_id: 'Your client ID', //比如我的828***********
+        client_secret: 'Your client secret', //比如我的49e************************
+    },
+});
+gitment.render('gitmentContainer');
+&lt;/script&gt; 为了灵活，我在_config.yml中配置好全局参数：&lt;br/&gt;
+</code></pre></div></div>
+
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/comment-blog1.png" alt="此处输入图片的描述" /></p>
+
+<h3 id="3初始化评论">3.初始化评论</h3>
+
+<p>页面发布后，你需要访问页面并使用你的 GitHub 账号登录（请确保你的账号是第二步所填 repo 的 owner），点击初始化按钮。<br />
+<strong>初始化：点击下初始化即可</strong></p>
+
+<p><img src="https://blog-1258233124.cos.ap-beijing.myqcloud.com/comment.png" alt="此处输入图片的描述" /></p>
+
+<p>之后其他用户即可在该页面发表评论</p>
+
+<blockquote>
+  <p>异常：通常是repo或者owner配置不对，请细心检测Error：Not Found。还有本地调测会出现callback不对提示Error:
+Comments Not Initialized</p>
+</blockquote>
+
+<h3 id="巴拉巴拉">巴拉巴拉</h3>
+<p>帅哥美女们留个言再走呗~ 不要钱~<br />
+有问题微博私或评论留言哟~比心~<br /></p>
+
+:ET

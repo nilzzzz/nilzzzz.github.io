@@ -1,0 +1,61 @@
+I",	<h4 id="问题描述">问题描述</h4>
+<p>　　给定N个物品,每个物品有一个重量W和一个价值V.你有一个能装M重量的背包.问怎么装使得所装价值最大.每个物品只有一个.</p>
+<h4 id="输入格式">输入格式</h4>
+<p>　　输入的第一行包含两个整数n, m，分别表示物品的个数和背包能装重量。
+　　以后N行每行两个数Wi和Vi,表示物品的重量和价值</p>
+<h4 id="输出格式">输出格式</h4>
+<p>　　输出1行，包含一个整数，表示最大价值。</p>
+<h4 id="样例输入">样例输入</h4>
+<p>3 5
+2 3
+3 5
+4 7</p>
+<h4 id="样例输出">样例输出</h4>
+<p>8</p>
+<h4 id="数据规模和约定">数据规模和约定</h4>
+<p>　　1&lt;=N&lt;=200,M&lt;=5000.
+看到这个问题，可能会想到贪心算法，但是贪心其实是不对的。例如<a href="http://blog.csdn.net/kangroger/article/details/36036101">最少硬币找零问题</a>，要用动态规划。</p>
+
+<p>动态规划思想就是解决子问题并记录子问题的解，这样就不用重复解决子问题了。</p>
+
+<p>动态规划先找出子问题，我们可以这样考虑：在物品比较少，背包容量比较小时怎么解决？</p>
+<blockquote>
+  <ul>
+    <li>用一个数组wv[i][j]表示，在只有i个物品，容量为j的情况下背包问题的最优解，</li>
+    <li>那么当物品种类变大为i+1时，最优解是什么？第i+1个物品可以选择放进背包或者不放进背包（这也就是0和1），</li>
+    <li>假设放进背包（前提是放得下），那么wv[i+1][j]=wv[i][j-weight[i+1]]+value[i+1]；如果不放进背包，那么wv[i+1][j]=wv[i][j]。
+这就得出了状态转移方程：
+wv[i+1][j]=max(f[i][j],wv[i][j-weight[i+1]]+value[i+1])。</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
+using namespace std;
+int w[205];
+int v[205];
+int wv[205][5005]={0};//全局变量，初始化为0  
+int main()
+{
+	int i,j,n,m;
+	cin&gt;&gt;n;
+	cin&gt;&gt;m;
+	for(i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;w[i];
+		cin&gt;&gt;v[i];
+	}
+	for(i=1;i&lt;=n;i++)
+		for(j=1;j&lt;=m;j++)
+		{
+			if(w[i]&lt;=j)
+				wv[i][j]=max(wv[i-1][j],v[i]+wv[i-1][j-w[i]]);
+			else
+				wv[i][j]=wv[i-1][j];
+		}
+		cout&lt;&lt;wv[n][m]&lt;&lt;endl;
+	return 0;
+	
+}
+
+</code></pre></div></div>
+:ET
