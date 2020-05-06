@@ -57,7 +57,7 @@ DEPENDENCIES
   redcarpet
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.6p146
 
 BUNDLED WITH
-   1.13.7
+   1.17.2
