@@ -11,17 +11,9 @@ avatarDesc: 网络空间安全/java 后台开发/联邦学习/...
 #comment:
     #duoshuo: https-nilzzzz-github-io
 #Gitment
-#gitment:
-    #id: 2027b8f63f3fb6054a61
-    #secret: 24823b47a3f7ed2aa0ffc5f3b9f5a4670b46282e
-# Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
-    enable: true
-    githubID: nilzzzz
-    repo: https://github.com/nilzzzz/nilzzzz.github.io.git
-    ClientID: a174bfd41f225b1f4d2f
-    ClientSecret: 9b4874ef0a7e71fd7fecd697598a843429e4f103
-    lazy: false
+    id: 2027b8f63f3fb6054a61
+    secret: 24823b47a3f7ed2aa0ffc5f3b9f5a4670b46282e
 # Social
 social:
     weibo: 5548352763
