@@ -5,19 +5,6 @@ tag: JVM
 ---
 
 
-<a href="#1.String的基本特性">1.String的基本特性</a>
-
-<a href="#2.String的内存分配">2.String的内存分配</a>
-
-<a href="#3.String的基本操作">3.String的基本操作</a>
-
-<a href="#4.字符串拼接操作">4.字符串拼接操作</a>
-
-<a href="#5.intern()的使用">5.intern()的使用</a>
-
-<a href="#6. StringTable的垃圾回收">6. StringTable的垃圾回收</a>
-
-<a href="#7.G1中的String去重操作">7.G1中的String去重操作</a>
 
 ### 1.String的基本特性
 
